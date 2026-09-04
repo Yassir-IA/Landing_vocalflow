@@ -54,7 +54,7 @@
   <!-- Veil d'ouverture : logo + marque, s'efface après 1,85 s puis est retiré du DOM -->
   <div class="veil" aria-hidden="true">
     <div class="veil__inner">
-      <img class="veil__logo" src="/assets/vocalflow-logo-480.png" alt="" width="480" height="296">
+      <picture><source type="image/webp" srcset="/assets/vocalflow-logo-240.webp"><img src="/assets/vocalflow-logo-240.png" alt="" width="240" height="143" class="veil__logo"></picture>
       <div class="veil__name">VocalFlow</div>
     </div>
   </div>
@@ -63,7 +63,7 @@
   <header class="nav-wrap">
     <nav class="nav" aria-label="Navigation principale">
       <a href="#top" class="brand" aria-label="VocalFlow — retour en haut">
-        <img src="/assets/vocalflow-logo-480.png" alt="" width="480" height="296">
+        <picture><source type="image/webp" srcset="/assets/vocalflow-logo-240.webp"><img src="/assets/vocalflow-logo-240.png" alt="" width="240" height="143"></picture>
         <span class="brand__name">VocalFlow</span>
       </a>
       <a href="#diagnostic" class="btn btn--primary btn--nav"><span class="btn--nav__full">Réserver mon diagnostic</span><span class="btn--nav__short">Mon diagnostic</span></a>
@@ -136,8 +136,8 @@
           <div class="demo__idle">
             <button type="button" class="btn btn--accent demo__reveal">Tester l'IA en direct</button>
           </div>
-          <div class="demo__live" hidden>
-            <div class="status"><span class="status__dot" aria-hidden="true"></span><span class="status__text">EN LIGNE MAINTENANT</span></div>
+          <div class="demo__live" hidden tabindex="-1">
+            <div class="status" role="status"><span class="status__dot" aria-hidden="true"></span><span class="status__text">EN LIGNE MAINTENANT</span></div>
             <div class="demo__sub">Notre agent décroche dans la seconde, 24h/24.</div>
             <div class="widget">
               <div class="widget__frame">
@@ -171,7 +171,7 @@
       <section class="path" aria-labelledby="path-title">
         <p class="eyebrow">04 · Le chemin</p>
         <h2 id="path-title" class="h2">Quatre étapes, et vos appels <span class="accent">sont décrochés.</span></h2>
-        <ol class="steps">
+        <ol class="steps" role="list">
           <li class="step">
             <div class="step__head"><span class="step__badge">01</span><span class="step__ghost" aria-hidden="true">01</span></div>
             <h3 class="step__title">Diagnostic (30 min).</h3>
@@ -204,7 +204,7 @@
             <div class="plan__kicker">Pour démarrer</div>
             <h3 class="plan__name">La mise en service</h3>
             <p class="plan__desc">Votre agent vocal en production, configuré pour votre entreprise. Vous jugez sur pièce.</p>
-            <ul class="checklist">
+            <ul class="checklist" role="list">
               <li><span class="check" aria-hidden="true">✓</span><span>Diagnostic de votre flux d'appels et plan d'action</span></li>
               <li><span class="check" aria-hidden="true">✓</span><span>Configuration sur votre base métier : vocabulaire, offres, règles, agenda</span></li>
               <li><span class="check" aria-hidden="true">✓</span><span>Phase de test : vous le challengez avant la mise en ligne</span></li>
@@ -215,7 +215,7 @@
             <div class="plan__kicker">Places limitées chaque mois</div>
             <h3 class="plan__name">L'opération mensuelle</h3>
             <p class="plan__desc">Votre standard IA, supervisé et amélioré en continu, par la personne qui l'a construit.</p>
-            <ul class="checklist">
+            <ul class="checklist" role="list">
               <li><span class="check" aria-hidden="true">✓</span><span>Écoute et contrôle qualité des appels, chaque semaine</span></li>
               <li><span class="check" aria-hidden="true">✓</span><span>Corrections et améliorations en continu</span></li>
               <li><span class="check" aria-hidden="true">✓</span><span>Nouvelles capacités au fil de vos besoins : relances, campagnes de rappel, extensions</span></li>
@@ -238,7 +238,7 @@
             <h2 id="partner-title" class="partner__title">VocalFlow existe <span class="accent">en marque blanche.</span></h2>
             <p class="partner__text">Vous accompagnez des entreprises et voulez leur proposer l'IA vocale sous votre propre marque ? Infrastructure gérée, abonnement accessible, sans investissement de départ. Une dizaine de partenaires déploient déjà VocalFlow auprès de leurs clients.</p>
           </div>
-          <a href="mailto:contact@vocal-flow.fr?subject=Partenariat%20marque%20blanche%20VocalFlow" class="btn btn--ghost btn--sm" data-partner>Devenir partenaire →</a>
+          <a href="mailto:contact@vocal-flow.fr?subject=Partenariat%20marque%20blanche%20VocalFlow" class="btn btn--ghost btn--sm" data-partner><span>Devenir partenaire <span aria-hidden="true">→</span></span></a>
         </div>
       </section>
 
@@ -247,15 +247,15 @@
         <div class="about__inner">
           <div class="about__photo">
             <picture>
-              <source type="image/webp" srcset="/assets/portrait-720.webp 720w, /assets/portrait.webp 650w" sizes="(max-width: 900px) 420px, 380px">
-              <img src="/assets/portrait.jpg" srcset="/assets/portrait-720.jpg 720w, /assets/portrait.jpg 650w" sizes="(max-width: 900px) 420px, 380px" alt="Yassir Larabi, fondateur de VocalFlow" width="650" height="812" loading="lazy" decoding="async">
+              <source type="image/webp" srcset="/assets/portrait-720.webp 720w, /assets/portrait.webp 650w, /assets/portrait-410.webp 410w" sizes="(max-width: 900px) min(420px, calc(100vw - 48px)), (max-width: 1127px) calc(40vw - 45px), 407px">
+              <img src="/assets/portrait.jpg" srcset="/assets/portrait-720.jpg 720w, /assets/portrait.jpg 650w, /assets/portrait-410.jpg 410w" sizes="(max-width: 900px) min(420px, calc(100vw - 48px)), (max-width: 1127px) calc(40vw - 45px), 407px" alt="Yassir Larabi, fondateur de VocalFlow" width="650" height="812" loading="lazy" decoding="async">
             </picture>
           </div>
           <div class="about__body">
             <p class="eyebrow eyebrow--left">06 · Qui je suis</p>
             <h2 id="about-title" class="about__name">Yassir Larabi</h2>
             <p class="about__role">Fondateur de VocalFlow · AI Manager chez Smart Funnel</p>
-            <ul class="checklist checklist--about">
+            <ul class="checklist checklist--about" role="list">
               <li><span class="check" aria-hidden="true">✓</span><span>Fondateur de VocalFlow : plus de 100 000 appels traités par mes agents.</span></li>
               <li><span class="check" aria-hidden="true">✓</span><span>AI Manager chez Smart Funnel : opérer des systèmes IA que de vraies équipes utilisent, c'est mon quotidien.</span></li>
               <li><span class="check" aria-hidden="true">✓</span><span>Dans les agents IA et l'automatisation depuis 2023, via mon agence LBI.</span></li>
@@ -307,7 +307,7 @@
           <h2 id="final-title" class="final__title">Réservez votre diagnostic. <span class="grad-text">Repartez avec votre plan.</span></h2>
           <p class="final__lead">30 minutes, gratuites, en visio. On chiffre ce que vos appels manqués vous coûtent, et on identifie le système pour l'arrêter, qu'on travaille ensemble ou non.</p>
           <div class="cta-block final__cta">
-            <a href="https://calendly.com/contact-vocal-flow/audit-ia-vocale" class="btn btn--primary btn--final" data-calendly target="_blank" rel="noopener">Réserver mon diagnostic (30&nbsp;min) <span class="arrow" aria-hidden="true">→</span></a>
+            <a href="https://calendly.com/contact-vocal-flow/audit-ia-vocale" class="btn btn--primary btn--final" data-calendly target="_blank" rel="noopener">Réserver mon diagnostic (30&nbsp;min)<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span> <span class="arrow" aria-hidden="true">→</span></a>
             <div class="final__tag">SANS ENGAGEMENT</div>
             <div class="final__alt">Vous préférez l'entendre d'abord ? <a href="#demo-live">Testez l'IA en direct.</a></div>
           </div>
@@ -318,7 +318,7 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="/assets/vocalflow-logo-480.png" alt="VocalFlow" width="480" height="296">
+          <picture><source type="image/webp" srcset="/assets/vocalflow-logo-240.webp"><img src="/assets/vocalflow-logo-240.png" alt="VocalFlow" width="240" height="143"></picture>
           <span>© 2026 VocalFlow · LBI Agency · micro-entreprise française</span>
         </div>
         <nav class="footer__links" aria-label="Liens légaux">

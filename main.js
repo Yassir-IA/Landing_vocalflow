@@ -33,7 +33,7 @@
   }
 
   /* ---- Entrées animées : une fois jouées, on retire l'animation (classe .is-in) ---- */
-  qsa('.rise, .nav-wrap').forEach(function (el) {
+  qsa('.rise, .nav-wrap, .widget').forEach(function (el) {
     el.addEventListener('animationend', function onEnd(event) {
       if (event.target !== el) return;
       el.classList.add('is-in');
@@ -105,6 +105,8 @@
       demoIdle.hidden = true;
       demoLive.hidden = false;
       if (widgetIframe && !widgetIframe.getAttribute('src')) widgetIframe.setAttribute('src', widgetIframe.getAttribute('data-src'));
+      /* Le bouton cliqué disparaît : on déplace le focus sur le contenu révélé (tabindex=-1, role=status annonce « En ligne »). */
+      try { demoLive.focus({ preventScroll: true }); } catch (e) { demoLive.focus(); }
     });
     if (WIDGET_AUTO_EXPAND && widgetFrame && widgetIframe) {
       /* Le focus passé à l'iframe (clic sur son bouton) fait perdre le focus à la fenêtre : signal de départ d'appel. */

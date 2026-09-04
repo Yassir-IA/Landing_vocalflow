@@ -65,6 +65,8 @@
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
+/* Ces boîtes combinent largeur ou hauteur explicite + padding/bordure et sont en content-box dans la maquette. */
+.nav, .footer__inner, .stats__box, .law, .demo__card, .partner__card, .faq__list, .check, .widget__frame { box-sizing: content-box; }
 
 html {
   scroll-behavior: smooth;
@@ -86,13 +88,13 @@ body {
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-2); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 
 img { display: block; max-width: 100%; height: auto; }
 h1, h2, h3, p, ul, ol { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
-h1, h2, h3 { text-wrap: balance; }
-p { text-wrap: pretty; }
+@media (max-width: 1199px) { h1, h2, h3 { text-wrap: balance; } p { text-wrap: pretty; } } /* desktop : coupures de ligne de la maquette */
 
 .skip-link {
   position: absolute; left: 16px; top: -60px; z-index: 1000;
@@ -148,6 +150,7 @@ p { text-wrap: pretty; }
 .btn--ghost:hover { background: rgba(255, 255, 255, .08); color: var(--ink); }
 .btn--sm { padding: 15px 30px; font-size: 16px; gap: 8px; flex-shrink: 0; }
 .btn--back { padding: 10px 18px; font-size: 14.5px; font-weight: 600; }
+.btn--back__short { display: none; }
 
 .btn--accent { padding: 17px 36px; font-size: 17px; background: rgba(139, 92, 246, .07); border: 1px solid rgba(167, 139, 250, .5); color: var(--accent); }
 .btn--accent:hover { background: rgba(139, 92, 246, .14); color: var(--accent-2); }
@@ -189,7 +192,7 @@ p { text-wrap: pretty; }
   animation: veilOut 1.85s ease both;
 }
 .veil__inner { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-.veil__logo { height: 40px; width: auto; animation: markIn .8s var(--ease) .1s both; }
+.veil__logo { height: 40px; width: auto; margin: 17px 0; animation: markIn .8s var(--ease) .1s both; } /* 17 px = marge transparente du PNG de la maquette */
 .veil__name {
   font-weight: 800; font-size: 30px; letter-spacing: -.01em;
   background: var(--grad-mark); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
@@ -282,6 +285,7 @@ p { text-wrap: pretty; }
 }
 .demo__idle { display: flex; justify-content: center; }
 .demo__idle[hidden], .demo__live[hidden] { display: none; }
+.demo__live:focus { outline: none; }
 .status { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .status__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); animation: pulseDot 2s ease infinite; }
 .status__text { font-size: 13px; letter-spacing: .2em; font-weight: 700; color: var(--muted-2); }
@@ -318,7 +322,10 @@ p { text-wrap: pretty; }
 .path { position: relative; padding: 100px 24px 40px; background-image: radial-gradient(640px 420px at 10% 40%, rgba(91, 108, 255, .07), transparent 65%); }
 .steps { position: relative; max-width: 1280px; margin: 52px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; align-items: stretch; }
 .step { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 26px 28px; }
-.step + .step::before { content: ''; position: absolute; top: 51px; left: -25px; width: 28px; height: 1px; background: rgba(167, 139, 250, .35); }
+.step + .step::before { content: ''; position: absolute; top: 51px; width: 28px; height: 1px; background: rgba(167, 139, 250, .35); }
+.step:nth-child(2)::before { left: -20.5px; }
+.step:nth-child(3)::before { left: -26px; }
+.step:nth-child(4)::before { left: -31.5px; }
 .step__head { display: flex; align-items: center; gap: 14px; }
 .step__badge {
   width: 40px; height: 40px; border-radius: 50%; background: var(--grad-badge); flex-shrink: 0;
@@ -378,6 +385,7 @@ p { text-wrap: pretty; }
 .faq__a { padding: 0 28px 22px; }
 .faq__a p { font-size: 15.5px; line-height: 1.65; color: var(--muted); }
 .faq__a[hidden] { display: none; }
+.faq__q:focus-visible { outline-offset: -3px; } /* la liste est en overflow:hidden */
 
 /* ---------- S12 CTA final ---------- */
 .final {
@@ -396,7 +404,7 @@ p { text-wrap: pretty; }
 /* ---------- Pied de page ---------- */
 .footer { border-top: 1px solid var(--line-faint); }
 .footer__inner { max-width: 1400px; margin: 0 auto; padding: 26px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
-.footer__brand { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted-3); }
+.footer__brand { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted-3); min-height: 24px; }
 .footer__brand img { height: 13px; width: auto; opacity: .85; }
 .footer__links { display: flex; gap: 18px; flex-wrap: wrap; }
 .footer__links a { font-size: 14px; color: var(--muted); }
@@ -412,7 +420,7 @@ p { text-wrap: pretty; }
 
 .legal h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -.02em; line-height: 1.1; margin: 14px 0; }
 .legal__intro { color: var(--body); font-size: 16px; line-height: 1.65; margin: 0 0 10px; }
-.legal__date { color: var(--muted-3); font-size: 12px; letter-spacing: .2em; font-weight: 700; text-transform: uppercase; margin: 0 0 44px; }
+.legal__date { color: var(--muted-2); font-size: 12px; letter-spacing: .2em; font-weight: 700; text-transform: uppercase; margin: 0 0 44px; }
 .legal__card { border: 1px solid var(--line); border-radius: 18px; background: var(--card); padding: clamp(22px, 4vw, 36px); margin-bottom: 20px; }
 .legal__card h2 { font-size: 21px; font-weight: 700; letter-spacing: -.01em; margin: 0 0 16px; }
 .legal__card p { margin: 0 0 14px; color: var(--soft); font-size: 15.5px; line-height: 1.65; }
@@ -420,9 +428,9 @@ p { text-wrap: pretty; }
 .legal__card ul { margin: 0 0 14px; padding-left: 20px; list-style: disc; color: var(--soft); font-size: 15.5px; line-height: 1.75; }
 .legal__card ul:last-child { margin-bottom: 0; }
 .legal__card strong { color: var(--ink); font-weight: 600; }
-.legal__card .hint { color: var(--muted-3); }
+.legal__card .hint { color: var(--muted-2); }
 .legal__card dl { display: grid; grid-template-columns: auto 1fr; gap: 12px 26px; margin: 0; font-size: 15.5px; line-height: 1.55; }
-.legal__card dt { color: var(--muted-3); font-size: 13px; letter-spacing: .04em; padding-top: 2px; line-height: 1.55; }
+.legal__card dt { color: var(--muted-2); font-size: 13px; letter-spacing: .04em; padding-top: 2px; line-height: 1.55; }
 .legal__card dd { margin: 0; color: var(--ink); }
 .legal__card dl + p { margin-top: 16px; }
 .legal__callout { border-left: 2px solid var(--accent); padding: 4px 0 4px 18px; color: var(--soft); font-size: 15px; line-height: 1.65; }
@@ -489,9 +497,21 @@ p { text-wrap: pretty; }
   .btn { white-space: normal; text-align: center; }
   .btn--primary, .btn--ghost, .btn--accent { padding: 15px 24px; font-size: 16px; }
   .btn--final { padding: 16px 26px; font-size: 16.5px; }
-  .btn--nav { white-space: nowrap; }
+  /* Nav : reste compacte (la règle .btn--primary ci-dessus a la même spécificité et vient après celle de 720 px) */
+  .btn--nav { padding: 10px 16px; font-size: 14px; white-space: nowrap; }
+  .nav { gap: 12px; }
+  .btn--back { padding: 9px 14px; font-size: 14px; white-space: nowrap; }
+  .btn--back__full { display: none; }
+  .btn--back__short { display: inline; }
+  /* Widget de démo : le recadrage (409 px) est calibré pour une iframe ≥ 360 px ; en dessous, on montre l'app entière */
+  .widget__frame { height: var(--widget-height); border-radius: 18px; }
+  .widget__frame iframe { top: 0; }
   .hero { padding: 96px 18px 48px; }
   .hero__eyebrow { flex-wrap: wrap; }
   .card, .step { padding: 24px 22px; }
   .step__ghost { font-size: 40px; }
+}
+
+@media (max-width: 380px) {
+  .brand__name { display: none; }
 }
