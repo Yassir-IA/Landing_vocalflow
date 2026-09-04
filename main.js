@@ -11,7 +11,6 @@
   var WIDGET_AUTO_EXPAND = false;
   var STATS_DURATION = 1600;
 
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function qs(sel, root) { return (root || document).querySelector(sel); }
   function qsa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
@@ -24,7 +23,7 @@
   var veil = qs('.veil');
   if (veil) {
     var removeVeil = function () { if (veil.parentNode) veil.parentNode.removeChild(veil); };
-    if (reduced || getComputedStyle(veil).animationName === 'none' || getComputedStyle(veil).display === 'none') {
+    if (getComputedStyle(veil).animationName === 'none' || getComputedStyle(veil).display === 'none') {
       removeVeil();
     } else {
       veil.addEventListener('animationend', function (event) { if (event.target === veil) removeVeil(); });
@@ -43,7 +42,7 @@
 
   /* ---- Halo qui suit la souris (pointeurs fins uniquement, interpolation 0,12 comme la maquette) ---- */
   var spot = qs('.spot');
-  if (spot && !reduced && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+  if (spot && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
     var tx = -1000, ty = -1000, x = tx, y = ty, raf = 0;
     var tick = function () {
       x += (tx - x) * 0.12; y += (ty - y) * 0.12;
@@ -64,7 +63,7 @@
   function formatStat(el, value) {
     return (el.getAttribute('data-prefix') || '') + value.toLocaleString('fr-FR') + (el.getAttribute('data-suffix') || '');
   }
-  if (counters.length && !reduced) {
+  if (counters.length) {
     var statsRan = false;
     var runStats = function () {
       if (statsRan) return;

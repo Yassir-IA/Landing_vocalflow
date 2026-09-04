@@ -437,20 +437,17 @@ ul, ol { padding: 0; list-style: none; }
 .legal__outro { margin: 36px 0 0; color: var(--muted-2); font-size: 14px; }
 .legal .eyebrow { text-align: left; }
 
-/* ---------- Mouvement réduit ---------- */
+/* ---------- Mouvement réduit ----------
+   Windows « Effets d'animation » désactivé, macOS « Réduire les animations » : le navigateur déclare
+   prefers-reduced-motion. On garde l'intro (veil, marque, entrées) et l'onde, mais en fondus seuls :
+   plus de déplacement, de zoom ni de flou. Le halo suit la souris sans à-coups, il est conservé. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .veil { display: none; }
-  .spot { display: none; }
-  .nav-wrap { animation: none; }
-  .rise, .widget { animation-name: fadeOnly; animation-duration: .4s; animation-delay: 0s; }
-  /* Sans veil, le hero n'attend plus : cascade courte (les sélecteurs à deux classes ci-dessus gardent sinon leurs délais). */
-  .hero__eyebrow.rise { animation-delay: 0s; }
-  .hero__title.rise { animation-delay: .08s; }
-  .hero__lead.rise { animation-delay: .16s; }
-  .hero__cta.rise { animation-delay: .24s; }
-  .wave span, .status__dot { animation: none; }
+  .veil__logo, .veil__name { animation-name: fadeOnly; }
+  .nav-wrap { animation-name: fadeOnly; }
+  .rise, .widget { animation-name: fadeOnly; }
   .btn, .widget__frame, .widget__frame iframe { transition: none; }
+  .btn--primary:hover, .btn--nav:hover { transform: none; }
 }
 
 /* ---------- Responsive ---------- */

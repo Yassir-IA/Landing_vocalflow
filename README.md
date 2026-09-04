@@ -89,7 +89,9 @@ Pour rediriger l'URL `*.vercel.app` vers le domaine, ajouter dans `vercel.json` 
 - **Bouton « Devenir partenaire »** (marque blanche) : la maquette n'avait pas de cible ; il ouvre un e-mail vers `contact@vocal-flow.fr` avec l'objet pré-rempli (`data-partner` dans `index.html`).
 - **Compteurs** : `data-count` / `data-prefix` / `data-suffix` sur les `.stat__num` d'`index.html` (100 000 appels, 75 %).
 - **Photo** : `assets/portrait*.webp/jpg`. Pour la remplacer : mêmes noms de fichiers ou renommer et mettre à jour le `<picture>` (les assets sont mis en cache 30 jours).
-- **Durée de l'intro** : veil `1.85s` (`.veil`), nav à `1.55s`, hero de `0.88s` à `1.36s` (`.rise` dans `styles.css`). Mouvement réduit activé sur le système : pas de veil ni de halo, entrées en fondu seul.
+- **Durée de l'intro** : veil `1.85s` (`.veil`), nav à `1.55s`, hero de `0.88s` à `1.36s` (`.rise` dans `styles.css`). Mouvement réduit demandé par le système (Windows « Effets d'animation » désactivé, macOS « Réduire les animations ») :
+  l'intro, l'onde et le halo restent, mais en fondus seuls, sans déplacement, zoom ni flou. Pour voir la version complète sur son
+  propre PC : Paramètres Windows → Accessibilité → Effets visuels → Effets d'animation.
 - **Identité légale** (SIRET, adresse, TVA) : `mentions-legales.html` et `politique-confidentialite.html`.
 - **Logo** : la maquette affiche un PNG 400 × 400 dont le glyphe occupe 54,5 % de la hauteur ; le site utilise un PNG recadré,
   donc les hauteurs CSS valent 0,545 × celles de la maquette (74 → 40 px dans le veil, 38 → 21 px dans la nav, 24 → 13 px au pied de page).
