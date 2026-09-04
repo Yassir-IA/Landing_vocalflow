@@ -60,6 +60,19 @@ curl -sI https://<domaine>/assets/og.jpg | grep -i cache-control      # attendu 
 curl -sI https://<domaine>/mentions-legales | head -1                 # attendu : HTTP/2 200 (cleanUrls)
 ```
 
+## Prévisualiser en local
+
+Les chemins étant absolus (`/styles.css`), ouvrir `index.html` en double-clic ne charge pas les styles :
+il faut un petit serveur HTTP à la racine du projet.
+
+```bash
+# Node (déjà installé)
+npx --yes serve .            # http://localhost:3000 — gère aussi les URL propres (/mentions-legales)
+
+# ou Python
+python -m http.server 8000   # http://localhost:8000 — utiliser /mentions-legales.html
+```
+
 ## Domaine
 
 Les URLs absolues supposent **https://vocal-flow.fr** (déduit de l'adresse `contact@vocal-flow.fr` — **à confirmer**).
