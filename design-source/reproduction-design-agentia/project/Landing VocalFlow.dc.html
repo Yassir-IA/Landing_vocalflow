@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>VocalFlow | L'IA vocale qui décroche 24/7</title>
+<meta name="description" content="VocalFlow décroche vos appels en une seconde, jour et nuit, puis qualifie, prend le rendez-vous, remplit votre CRM et relance. Diagnostic gratuit de 30 minutes.">
+<meta property="og:title" content="VocalFlow. Ne manquez plus jamais un seul appel.">
+<meta property="og:description" content="L'infrastructure téléphonique complète de votre entreprise : décroché en 1 seconde, qualification, RDV, CRM, relances. Testez l'IA en direct.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:104px}
+body{margin:0;background:#0a0a1c;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#a78bfa;text-decoration:none}
+a:hover{color:#c4b5fd}
+@keyframes pulseDot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(52,211,153,0.55)}50%{opacity:0.75;box-shadow:0 0 0 6px rgba(52,211,153,0)}}
+@keyframes riseIn{from{opacity:0;transform:translateY(26px);filter:blur(10px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes fadeNav{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes markIn{from{opacity:0;transform:scale(0.82) translateY(8px);filter:blur(12px)}to{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}}
+@keyframes veilOut{0%,60%{opacity:1}100%{opacity:0}}
+@keyframes pulseGreen{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,211,238,0.45)}50%{opacity:0.8;box-shadow:0 0 0 5px rgba(34,211,238,0)}}
+@keyframes waveBar{0%,100%{transform:scaleY(0.35)}50%{transform:scaleY(1)}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div id="top" style="background:#0a0a1c;color:#f5f4fb;overflow:clip">
+
+<div ref="{{ spotRef }}" style="position:fixed;top:0;left:0;width:640px;height:640px;margin:-320px 0 0 -320px;z-index:0;pointer-events:none;background:radial-gradient(circle closest-side, rgba(78,217,234,0.13), transparent 100%);will-change:transform;transform:translate3d(-1000px,-1000px,0)"></div>
+
+<sc-if value="{{ showIntro }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;inset:0;z-index:100;background-color:#0a0a1c;background-image:radial-gradient(560px 400px at 50% 46%, rgba(124,92,246,0.16), transparent 68%);display:flex;align-items:center;justify-content:center;animation:veilOut 1.85s ease both;pointer-events:none">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+      <img src="assets/vocalflow-logo.png" alt="" style="height:74px;display:block;animation:markIn 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s both">
+      <div style="font-weight:800;font-size:30px;letter-spacing:-0.01em;background:linear-gradient(92deg,#8fb0ff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:markIn 0.8s cubic-bezier(0.22,1,0.36,1) 0.28s both">VocalFlow</div>
+    </div>
+  </div>
+</sc-if>
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(16px);background:rgba(8,8,24,0.66);border-bottom:1px solid rgba(255,255,255,0.05);animation:fadeNav 0.7s ease 1.55s both">
+  <div style="max-width:1400px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between">
+    <a href="#top" style="display:flex;align-items:center;gap:11px">
+      <img src="assets/vocalflow-logo.png" alt="VocalFlow" style="height:38px;display:block">
+      <span style="font-weight:800;font-size:19px;letter-spacing:-0.01em;background:linear-gradient(92deg,#8fb0ff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">VocalFlow</span>
+    </a>
+    <a href="#diagnostic" style="display:inline-flex;align-items:center;padding:11px 24px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:15.5px;box-shadow:0 8px 26px -6px rgba(124,92,246,0.6);transition:all .2s ease" style-hover="transform:translateY(-1px);box-shadow:0 12px 32px -6px rgba(124,92,246,0.75);color:#ffffff">Réserver mon diagnostic</a>
+  </div>
+</div>
+
+<section data-screen-label="S1 Hero" style="position:relative;min-height:100vh;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:110px 24px 60px;background-image:radial-gradient(700px 460px at 12% 18%, rgba(91,108,255,0.16), transparent 65%),radial-gradient(640px 420px at 88% 26%, rgba(139,92,246,0.14), transparent 65%)">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,255,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(148,163,255,0.05) 1px, transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 75% 62% at 50% 32%, #000 0%, transparent 72%);mask-image:radial-gradient(ellipse 75% 62% at 50% 32%, #000 0%, transparent 72%)"></div>
+  <div style="position:relative;max-width:980px;margin:0 auto;text-align:center">
+    <div style="display:flex;align-items:center;justify-content:center;gap:9px;font-size:14.5px;color:#9b97b8;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.88s both"><span style="display:inline-flex;align-items:center;gap:5px"><span style="display:inline-flex;align-items:center;gap:3.5px;height:10px"><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.1s ease-in-out infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.3s ease-in-out 0.15s infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 0.9s ease-in-out 0.3s infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.2s ease-in-out 0.45s infinite"></span></span></span><span>Une IA qui parle <b style="color:#6d9bff">comme un humain</b></span></div>
+    <h1 style="font-size:60px;font-weight:800;line-height:1.09;letter-spacing:-0.025em;color:#f5f4fb;margin:18px auto 0;max-width:860px;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.95s both">Ne manquez plus jamais <span style="background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">un seul appel.</span></h1>
+    <p style="margin:26px auto 0;max-width:620px;font-size:18.5px;line-height:1.7;color:#b8b6cf;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 1.22s both">VocalFlow décroche en une seconde, jour et nuit, et transforme l'appel en rendez-vous dans votre agenda.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:38px;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 1.36s both">
+      <div style="display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap">
+        <a href="#diagnostic" style="display:inline-flex;align-items:center;gap:9px;padding:17px 34px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:17px;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 16px 40px -6px rgba(124,92,246,0.7);color:#ffffff">Réserver mon diagnostic (30 min) <span style="font-size:18px">→</span></a>
+        <a href="#demo-live" style="display:inline-flex;align-items:center;padding:17px 34px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:600;font-size:17px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Tester l'IA en direct</a>
+      </div>
+      <div style="font-size:14px;color:#8f8ca8">Gratuit. Vous repartez avec votre plan d'action, qu'on travaille ensemble ou non.</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="S2 Preuves flash" style="padding:70px 24px 40px">
+  <div ref="{{ statsRef }}" style="max-width:1180px;margin:0 auto;border:1px solid rgba(167,139,250,0.28);border-radius:20px;padding:44px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center">
+    <div><div style="font-size:52px;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">{{ stat1 }}</div><div style="margin:10px auto 0;max-width:260px;font-size:12.5px;letter-spacing:0.18em;line-height:1.6;color:#8f8ca8;text-transform:uppercase">appels traités par nos agents IA</div></div>
+    <div><div style="font-size:52px;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">{{ stat2 }}</div><div style="margin:10px auto 0;max-width:260px;font-size:12.5px;letter-spacing:0.18em;line-height:1.6;color:#8f8ca8;text-transform:uppercase">d'appels terminés sur une note positive</div></div>
+    <div><div style="font-size:52px;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">&lt; 1 s</div><div style="margin:10px auto 0;max-width:280px;font-size:12.5px;letter-spacing:0.18em;line-height:1.6;color:#8f8ca8;text-transform:uppercase">de latence : une conversation fluide, sans temps mort</div></div>
+  </div>
+</section>
+
+<section data-screen-label="S3 Le problème" style="position:relative;padding:48px 24px 40px">
+  <div style="text-align:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">01 · Le problème</div>
+  <h2 style="font-size:46px;font-weight:800;letter-spacing:-0.02em;line-height:1.16;text-align:center;color:#f5f4fb;margin:16px auto 0;max-width:940px">Le téléphone sonne. Personne ne décroche. <span style="color:#a78bfa">Le client appelle votre concurrent.</span></h2>
+  <div style="max-width:860px;margin:56px auto 0">
+    <div style="padding:22px 4px;border-top:1px solid rgba(255,255,255,0.07);font-size:21px;font-weight:600;line-height:1.5;color:#dcd9ec">« Un appel sur quatre arrive le soir, le week-end, ou pendant que toute l'équipe est occupée. »</div>
+    <div style="padding:22px 4px;border-top:1px solid rgba(255,255,255,0.07);font-size:21px;font-weight:600;line-height:1.5;color:#dcd9ec">« Le lead rappelé une heure trop tard avait déjà signé ailleurs. »</div>
+    <div style="padding:22px 4px;border-top:1px solid rgba(255,255,255,0.07);font-size:21px;font-weight:600;line-height:1.5;color:#dcd9ec">« Nos meilleures personnes passent leurs journées à répondre aux dix mêmes questions. »</div>
+    <div style="padding:22px 4px;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);font-size:21px;font-weight:600;line-height:1.5;color:#dcd9ec">« Nous décrochons encore nous-même entre deux rendez-vous, parce que personne d'autre ne peut le faire. »</div>
+  </div>
+  <p style="max-width:820px;margin:40px auto 0;font-size:16.5px;line-height:1.75;color:#b8b6cf">Faites le calcul : votre panier moyen, multiplié par les appels sans réponse de la semaine, multiplié par 52. Ce chiffre, c'est ce que votre standard laisse filer chaque année, pendant que votre budget publicité continue de faire sonner un téléphone que personne ne décroche. Et il ne compte pas vos propres heures : tant que les appels reposent sur vous, impossible de vous en détacher, et votre standard devient le plafond de votre croissance.</p>
+  <div style="max-width:860px;margin:44px auto 0;background:rgba(139,92,246,0.055);border:1px solid rgba(167,139,250,0.45);border-radius:20px;padding:34px 38px;box-shadow:0 0 70px -22px rgba(124,92,246,0.45)">
+    <p style="margin:0;font-size:17.5px;line-height:1.7;color:#cfcde0">Et depuis le 11 août 2026, la loi interdit le démarchage téléphonique sans consentement préalable. La prospection sortante se referme.</p>
+    <div style="margin-top:16px;font-size:27px;font-weight:800;line-height:1.35;color:#f5f4fb">Chaque appel entrant <span style="background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">vaut de l'or.</span> Et vous en laissez filer.</div>
+  </div>
+</section>
+
+<section id="demo-live" data-screen-label="S4 Démo en direct" style="position:relative;padding:100px 24px 40px">
+  <div style="text-align:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">02 · La preuve, en direct</div>
+  <h2 style="font-size:46px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:16px 0 0">Ne me croyez pas sur parole. <span style="color:#a78bfa">Appelez-la.</span></h2>
+  <p style="max-width:640px;margin:22px auto 0;text-align:center;font-size:17px;line-height:1.7;color:#b8b6cf">Notre IA de démonstration est en ligne, en ce moment même. Coupez-lui la parole, changez de sujet, parlez vite, posez des questions pièges : elle suit, sans jamais perdre le fil.</p>
+  <div style="max-width:880px;margin:44px auto 0;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:52px 40px;text-align:center;box-shadow:0 0 90px rgba(124,92,246,0.14)">
+    <sc-if value="{{ notRevealed }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;justify-content:center">
+        <div onClick="{{ reveal }}" style="display:inline-flex;align-items:center;gap:9px;padding:17px 36px;border-radius:999px;background:rgba(139,92,246,0.07);border:1px solid rgba(167,139,250,0.5);color:#a78bfa;font-weight:700;font-size:17px;cursor:pointer;transition:all .2s ease" style-hover="background:rgba(139,92,246,0.14);color:#c4b5fd">Tester l'IA en direct</div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px"><span style="width:9px;height:9px;border-radius:50%;background:#34d399;animation:pulseDot 2s ease infinite"></span><span style="font-size:13px;letter-spacing:0.2em;font-weight:700;color:#8f8ca8">EN LIGNE MAINTENANT</span></div>
+      <div style="margin-top:14px;font-size:16.5px;color:#cfcde0">Notre agent décroche dans la seconde, 24h/24.</div>
+      <div style="max-width:640px;margin:26px auto 0;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) both">
+        <div style="{{ widgetFrameStyle }}">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#6d6a85;font-size:13px;letter-spacing:0.18em;font-weight:700;pointer-events:none">CONNEXION À L'AGENT…</div>
+          <iframe ref="{{ widgetRef }}" src="https://app.vocal-flow.fr/agent-test-public?token=dpl_apt_5d28abdd1e798d0c195125b5055f5cab32efa5df6ee1982fee06af8acb499785&amp;agentId=01M1MCRBT5XDGEQPH5RAGVAJAZ" title="Tester l'agent VocalFlow" allow="microphone; autoplay; camera" scrolling="no" style="{{ widgetIframeStyle }}"></iframe>
+        </div>
+      </div>
+      <p style="max-width:560px;margin:22px auto 0;font-size:13px;line-height:1.6;color:#6d6a85">L'agent de démonstration suit un script générique. Le vôtre sera configuré sur votre métier, vos offres et vos règles.</p>
+    </sc-if>
+  </div>
+</section>
+
+<section data-screen-label="S5 Infrastructure" style="padding:100px 24px 40px">
+  <div style="text-align:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">03 · Au-delà du décroché</div>
+  <h2 style="font-size:46px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:16px 0 0">Répondre n'est que <span style="color:#a78bfa">le début.</span></h2>
+  <p style="max-width:600px;margin:22px auto 0;text-align:center;font-size:17px;line-height:1.7;color:#b8b6cf">Un appel décroché qui ne produit rien reste un appel perdu. Pendant et après chaque conversation, l'agent travaille pour vous.</p>
+  <div style="max-width:1180px;margin:52px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px"><div style="font-size:18.5px;font-weight:700;color:#f5f4fb">Qualification en temps réel.</div><p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:#9b97b8">Besoin, urgence, profil : l'agent trie chaque appelant selon vos critères et fait remonter ce qui compte.</p></div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px"><div style="font-size:18.5px;font-weight:700;color:#f5f4fb">Prise de rendez-vous automatique.</div><p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:#9b97b8">Agenda synchronisé : l'agent propose un créneau, le cale et le confirme pendant l'appel.</p></div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px"><div style="font-size:18.5px;font-weight:700;color:#f5f4fb">CRM rempli tout seul.</div><p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:#9b97b8">Fiches créées et enrichies à chaque appel. Zéro saisie manuelle, zéro post-it perdu.</p></div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px"><div style="font-size:18.5px;font-weight:700;color:#f5f4fb">Transcription et résumé.</div><p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:#9b97b8">Chaque conversation transcrite et résumée, avec les actions de suivi. Rien ne se perd, tout se retrouve.</p></div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px"><div style="font-size:18.5px;font-weight:700;color:#f5f4fb">Relances automatiques.</div><p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:#9b97b8">SMS ou WhatsApp envoyés après l'appel : confirmation, lien utile, rappel de rendez-vous.</p></div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px"><div style="font-size:18.5px;font-weight:700;color:#f5f4fb">Transfert vers un humain.</div><p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:#9b97b8">Dès qu'un appel l'exige, l'agent passe la main à la bonne personne, selon vos règles.</p></div>
+  </div>
+  <p style="max-width:700px;margin:36px auto 0;text-align:center;font-size:16.5px;line-height:1.7;color:#cfcde0">L'appel devient un rendez-vous posé, une fiche client remplie, une relance envoyée. <b style="color:#f5f4fb">Voilà ce qu'on installe chez vous.</b></p>
+</section>
+
+<section data-screen-label="S7 Le chemin" style="position:relative;padding:100px 24px 40px;background-image:radial-gradient(640px 420px at 10% 40%, rgba(91,108,255,0.07), transparent 65%)">
+  <div style="text-align:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">04 · Le chemin</div>
+  <h2 style="font-size:46px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:16px 0 0">Quatre étapes, et vos appels <span style="color:#a78bfa">sont décrochés.</span></h2>
+  <div style="position:relative;max-width:1280px;margin:52px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:stretch">
+    <div style="position:absolute;top:52px;left:calc(25% - 14px);width:28px;height:1px;background:rgba(167,139,250,0.35)"></div>
+    <div style="position:absolute;top:52px;left:calc(50% - 14px);width:28px;height:1px;background:rgba(167,139,250,0.35)"></div>
+    <div style="position:absolute;top:52px;left:calc(75% - 14px);width:28px;height:1px;background:rgba(167,139,250,0.35)"></div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:26px 28px">
+      <div style="display:flex;align-items:center;gap:14px"><span style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13.5px;color:#fff;flex-shrink:0">01</span><span style="font-size:48px;font-weight:800;line-height:1;color:rgba(255,255,255,0.06)">01</span></div>
+      <div style="margin-top:18px;font-size:19px;font-weight:700;color:#f5f4fb">Diagnostic (30 min).</div>
+      <p style="margin:9px 0 0;font-size:14.5px;line-height:1.65;color:#9b97b8">On cartographie votre flux d'appels : volumes, pics, appels ratés, et ce qu'ils vous coûtent.</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:26px 28px">
+      <div style="display:flex;align-items:center;gap:14px"><span style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13.5px;color:#fff;flex-shrink:0">02</span><span style="font-size:48px;font-weight:800;line-height:1;color:rgba(255,255,255,0.06)">02</span></div>
+      <div style="margin-top:18px;font-size:19px;font-weight:700;color:#f5f4fb">Votre plan.</div>
+      <p style="margin:9px 0 0;font-size:14.5px;line-height:1.65;color:#9b97b8">Ce que l'agent prendra en charge, dans quel ordre, avec quels garde-fous. Le plan vous appartient, avec ou sans moi.</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:26px 28px">
+      <div style="display:flex;align-items:center;gap:14px"><span style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13.5px;color:#fff;flex-shrink:0">03</span><span style="font-size:48px;font-weight:800;line-height:1;color:rgba(255,255,255,0.06)">03</span></div>
+      <div style="margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:19px;font-weight:700;color:#f5f4fb">Agent en production</span><span style="display:inline-block;border:1px solid rgba(167,139,250,0.5);color:#a78bfa;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:700;letter-spacing:0.08em">3 À 5 JOURS</span></div>
+      <p style="margin:9px 0 0;font-size:14.5px;line-height:1.65;color:#9b97b8">Configuré, challengé avec vous, branché à vos outils. Vos appels sont décrochés.</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:26px 28px">
+      <div style="display:flex;align-items:center;gap:14px"><span style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13.5px;color:#fff;flex-shrink:0">04</span><span style="font-size:48px;font-weight:800;line-height:1;color:rgba(255,255,255,0.06)">04</span></div>
+      <div style="margin-top:18px;font-size:19px;font-weight:700;color:#f5f4fb">Opération mensuelle.</div>
+      <p style="margin:9px 0 0;font-size:14.5px;line-height:1.65;color:#9b97b8">Écoute des appels, corrections, améliorations : un agent laissé seul se dégrade, un agent opéré progresse chaque semaine. Je ne disparais pas après la livraison.</p>
+    </div>
+  </div>
+</section>
+
+<section id="offre" data-screen-label="S8 L'offre" style="position:relative;padding:100px 24px 40px;background-image:radial-gradient(640px 420px at 90% 40%, rgba(139,92,246,0.08), transparent 65%)">
+  <div style="text-align:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">05 · L'offre</div>
+  <h2 style="font-size:46px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:16px 0 0">Deux façons de <span style="color:#a78bfa">travailler ensemble.</span></h2>
+  <div style="max-width:1020px;margin:52px auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:stretch">
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:34px 36px">
+      <div style="font-size:11.5px;letter-spacing:0.22em;color:#77748f;font-weight:700;text-transform:uppercase">Pour démarrer</div>
+      <div style="margin-top:12px;font-size:26px;font-weight:800;color:#f5f4fb">La mise en service</div>
+      <p style="margin:12px 0 0;font-size:15.5px;line-height:1.65;color:#9b97b8">Votre agent vocal en production, configuré pour votre entreprise. Vous jugez sur pièce.</p>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:13px">
+        <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;color:#e8e6f5">Diagnostic de votre flux d'appels et plan d'action</span></div>
+        <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;color:#e8e6f5">Configuration sur votre base métier : vocabulaire, offres, règles, agenda</span></div>
+        <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;color:#e8e6f5">Phase de test : vous le challengez avant la mise en ligne</span></div>
+        <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;color:#e8e6f5">En service en 3 à 5 jours, votre équipe formée à l'usage</span></div>
+      </div>
+    </div>
+    <div style="background:rgba(139,92,246,0.05);border:1px solid rgba(167,139,250,0.55);border-radius:22px;padding:34px 36px;box-shadow:0 0 70px -22px rgba(124,92,246,0.5)">
+      <div style="font-size:11.5px;letter-spacing:0.22em;color:#a78bfa;font-weight:700;text-transform:uppercase">Places limitées chaque mois</div>
+      <div style="margin-top:12px;font-size:26px;font-weight:800;color:#f5f4fb">L'opération mensuelle</div>
+      <p style="margin:12px 0 0;font-size:15.5px;line-height:1.65;color:#9b97b8">Votre standard IA, supervisé et amélioré en continu, par la personne qui l'a construit.</p>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:13px">
+        <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;color:#e8e6f5">Écoute et contrôle qualité des appels, chaque semaine</span></div>
+        <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;color:#e8e6f5">Corrections et améliorations en continu</span></div>
+        <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;color:#e8e6f5">Nouvelles capacités au fil de vos besoins : relances, campagnes de rappel, extensions</span></div>
+        <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;color:#e8e6f5">Canal direct avec moi, sans intermédiaire</span></div>
+      </div>
+    </div>
+  </div>
+  <p style="max-width:620px;margin:30px auto 0;text-align:center;font-size:15px;line-height:1.65;color:#8f8ca8">Pas de tarif public : chaque projet est dimensionné après le diagnostic, sur le ROI attendu.</p>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:13px;margin-top:30px">
+    <a href="#diagnostic" style="display:inline-flex;align-items:center;gap:9px;padding:17px 34px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:17px;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);color:#ffffff">Réserver mon diagnostic (30 min) <span style="font-size:18px">→</span></a>
+    <div style="font-size:14px;color:#8f8ca8">Le diagnostic est gratuit. Le plan est à vous, dans tous les cas.</div>
+  </div>
+</section>
+
+<section data-screen-label="S9 Marque blanche" style="padding:90px 24px 40px">
+  <div style="max-width:1020px;margin:0 auto;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:38px 42px;display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap">
+    <div style="max-width:640px">
+      <div style="font-size:12px;letter-spacing:0.26em;font-weight:700;color:#9b97b8;text-transform:uppercase">Agences &amp; intégrateurs</div>
+      <div style="margin-top:12px;font-size:27px;font-weight:800;letter-spacing:-0.01em;color:#f5f4fb">VocalFlow existe <span style="color:#a78bfa">en marque blanche.</span></div>
+      <p style="margin:14px 0 0;font-size:15.5px;line-height:1.7;color:#b8b6cf">Vous accompagnez des entreprises et voulez leur proposer l'IA vocale sous votre propre marque ? Infrastructure gérée, abonnement accessible, sans investissement de départ. Une dizaine de partenaires déploient déjà VocalFlow auprès de leurs clients.</p>
+    </div>
+    <a href="#top" style="display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:600;font-size:16px;flex-shrink:0;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Devenir partenaire →</a>
+  </div>
+</section>
+
+<section data-screen-label="S10 Qui je suis" style="position:relative;padding:100px 24px 40px;background-image:radial-gradient(640px 420px at 12% 60%, rgba(91,108,255,0.08), transparent 65%)">
+  <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:64px;align-items:center">
+    <div style="width:100%;aspect-ratio:4/4.6;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);background:#12122a"><image-slot id="photo-yassir" shape="rect" placeholder="photo Yassir Larabi"></image-slot></div>
+    <div>
+      <div style="font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">06 · Qui je suis</div>
+      <div style="margin-top:16px;font-size:42px;font-weight:800;letter-spacing:-0.02em;color:#f5f4fb">Yassir Larabi</div>
+      <div style="margin-top:10px;font-size:13px;letter-spacing:0.2em;font-weight:700;color:#9b97b8;text-transform:uppercase">Fondateur de VocalFlow · AI Manager chez Smart Funnel</div>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;gap:12px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:16px;line-height:1.6;color:#e8e6f5">Fondateur de VocalFlow : plus de 100 000 appels traités par mes agents.</span></div>
+        <div style="display:flex;gap:12px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:16px;line-height:1.6;color:#e8e6f5">AI Manager chez Smart Funnel : opérer des systèmes IA que de vraies équipes utilisent, c'est mon quotidien.</span></div>
+        <div style="display:flex;gap:12px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:16px;line-height:1.6;color:#e8e6f5">Dans les agents IA et l'automatisation depuis 2023, via mon agence LBI.</span></div>
+      </div>
+      <p style="margin:26px 0 0;font-size:16px;line-height:1.7;color:#b8b6cf">Le téléphone est le canal que je connais le mieux : je l'écoute, je le règle et je l'améliore toutes les semaines. Cette page vous propose ce savoir-faire, sur votre ligne.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" data-screen-label="S11 FAQ" style="padding:100px 24px 20px">
+  <div style="text-align:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">07 · FAQ</div>
+  <h2 style="font-size:46px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:16px 0 0">Les questions qu'on me pose <span style="color:#a78bfa">vraiment.</span></h2>
+  <div style="max-width:900px;margin:46px auto 0;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="7">
+      <div style="{{ f.wrapStyle }}">
+        <div onClick="{{ f.onToggle }}" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 28px;cursor:pointer">
+          <span style="font-size:17px;font-weight:700;color:#f5f4fb">{{ f.q }}</span>
+          <span style="color:#a78bfa;font-size:20px;font-weight:600;flex-shrink:0">{{ f.icon }}</span>
+        </div>
+        <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;padding:0 28px 22px;font-size:15.5px;line-height:1.65;color:#9b97b8">{{ f.a }}</p>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="diagnostic" data-screen-label="S12 CTA final" style="position:relative;padding:120px 24px 100px;background-image:radial-gradient(620px 420px at 8% 75%, rgba(91,108,255,0.12), transparent 65%),radial-gradient(560px 380px at 95% 40%, rgba(139,92,246,0.1), transparent 65%)">
+  <div style="max-width:800px;margin:0 auto;text-align:center">
+    <h2 style="font-size:48px;font-weight:800;letter-spacing:-0.02em;line-height:1.14;color:#f5f4fb;margin:0">Réservez votre diagnostic. <span style="background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Repartez avec votre plan.</span></h2>
+    <p style="margin:22px auto 0;max-width:620px;font-size:17px;line-height:1.7;color:#b8b6cf">30 minutes, gratuites, en visio. On chiffre ce que vos appels manqués vous coûtent, et on identifie le système pour l'arrêter, qu'on travaille ensemble ou non.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:36px">
+      <a href="#diagnostic" style="display:inline-flex;align-items:center;gap:9px;padding:18px 38px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:17.5px;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 16px 40px -6px rgba(124,92,246,0.7);color:#ffffff">Réserver mon diagnostic (30 min) <span style="font-size:18px">→</span></a>
+      <div style="font-size:12px;letter-spacing:0.22em;font-weight:700;color:#8f8ca8">SANS ENGAGEMENT</div>
+      <div style="font-size:14.5px;color:#8f8ca8">Vous préférez l'entendre d'abord ? <a href="#demo-live">Testez l'IA en direct.</a></div>
+    </div>
+  </div>
+</section>
+
+<div style="border-top:1px solid rgba(255,255,255,0.06)">
+  <div style="max-width:1400px;margin:0 auto;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <div style="display:flex;align-items:center;gap:10px"><img src="assets/vocalflow-logo.png" alt="VocalFlow" style="height:24px;display:block;opacity:0.85"><span style="font-size:14px;color:#77748f">© 2026 VocalFlow · LBI Agency · micro-entreprise française</span></div>
+    <div style="display:flex;gap:18px"><a href="#top" style="font-size:14px;color:#9b97b8">Mentions légales</a><a href="#top" style="font-size:14px;color:#9b97b8">Confidentialité</a></div>
+  </div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;widgetOffset&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 409, &quot;min&quot;: 0, &quot;max&quot;: 700, &quot;step&quot;: 1, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Widget démo (S4) — cadrage du bouton&quot;}, &quot;widgetWindow&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 89, &quot;min&quot;: 40, &quot;max&quot;: 200, &quot;step&quot;: 1, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Widget démo (S4) — cadrage du bouton&quot;}, &quot;widgetHeight&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 630, &quot;min&quot;: 400, &quot;max&quot;: 1000, &quot;step&quot;: 10, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Widget démo (S4) — cadrage du bouton&quot;}, &quot;widgetAutoExpand&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Widget démo (S4) — cadrage du bouton&quot;}}">
+class Component extends DCLogic {
+  state = { revealed: false, faq: -1, c1: 0, c2: 0, introDone: false, callStarted: false };
+
+  componentDidMount() {
+    this._intro = setTimeout(() => this.setState({ introDone: true }), 2100);
+    this._initSpot();
+    this._onBlur = () => setTimeout(() => {
+      if (this._widget && document.activeElement === this._widget && !this.state.callStarted) this.setState({ callStarted: true });
+    }, 0);
+    addEventListener('blur', this._onBlur);
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => {
+        if (e.isIntersecting && !this._ran) { this._ran = true; this.animateStats(); io.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    let tries = 0;
+    this._t = setInterval(() => {
+      tries++;
+      const el = this._stats || document.querySelector('section[data-screen-label="S2 Preuves flash"] > div');
+      if (el) { io.observe(el); clearInterval(this._t); }
+      else if (tries > 15) { clearInterval(this._t); if (!this._ran) { this._ran = true; this.animateStats(); } }
+    }, 200);
+  }
+  componentWillUnmount() { clearInterval(this._t); clearTimeout(this._intro); if (this._onMove) removeEventListener('mousemove', this._onMove); if (this._onBlur) removeEventListener('blur', this._onBlur); }
+
+  _initSpot() {
+    if (this._spotInit) return;
+    this._spotInit = true;
+    if (!matchMedia('(pointer: fine)').matches) return;
+    let tx = -1000, ty = -1000, x = tx, y = ty, raf = 0;
+    const tick = () => {
+      x += (tx - x) * 0.12; y += (ty - y) * 0.12;
+      if (this._spot) this._spot.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0)';
+      if (Math.abs(tx - x) > 0.3 || Math.abs(ty - y) > 0.3) raf = requestAnimationFrame(tick);
+      else raf = 0;
+    };
+    this._onMove = (e) => {
+      if (x < -500) { x = e.clientX; y = e.clientY; }
+      tx = e.clientX; ty = e.clientY;
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+    addEventListener('mousemove', this._onMove, { passive: true });
+  }
+
+  animateStats() {
+    const t0 = performance.now(), D = 1600;
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / D), e = 1 - Math.pow(1 - p, 3);
+      this.setState({ c1: Math.round(100000 * e), c2: Math.round(75 * e) });
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  renderVals() {
+    this._initSpot();
+    const S = this.state;
+    const wH = this.props.widgetHeight ?? 630;
+    const wOff = this.props.widgetOffset ?? 409;
+    const wWin = this.props.widgetWindow ?? 89;
+    const wOpen = S.callStarted && (this.props.widgetAutoExpand ?? false);
+    const faqsData = [
+      { q: "« On a déjà quelqu'un qui répond au téléphone. »", a: "Parfait : l'agent prend ce qui déborde. Les appels simultanés, les soirs, les week-ends, les pics d'activité. Votre équipe garde les conversations à valeur, l'IA absorbe le reste." },
+      { q: "« Combien de temps pour l'installer ? »", a: "3 à 5 jours, et on s'occupe de tout : diagnostic, configuration sur votre base métier, phase de test où vous le challengez, mise en service. Vous n'avez qu'à valider." },
+      { q: "« Et si elle ne sait pas répondre ? »", a: "Elle transfère vers un humain, selon vos règles. Et chaque cas non couvert est ajouté à sa base la semaine même : c'est ça, un système opéré." },
+      { q: "« On va entendre que c'est un robot ? »", a: "Appelez la démo et jugez : intonations naturelles, pauses, adaptation au rythme de votre interlocuteur. La voix est choisie avec vous : timbre, ton, énergie." },
+      { q: "« Ça marche pour mon secteur ? »", a: "L'agent est configuré sur votre base métier : vos services, vos offres, vos règles. Si vos appels entrants ont de la valeur, il y a un système à construire. Le diagnostic vous le dira honnêtement, y compris si la réponse est non." },
+      { q: "« Une IA au téléphone, c'est légal ? »", a: "Oui : l'agent traite vos appels entrants et le suivi de personnes qui vous ont sollicités, exactement le cadre que la loi de 2026 laisse ouvert. Les règles d'information des appelants se configurent selon vos obligations, et on les cadre ensemble au diagnostic." },
+      { q: "« Combien ça coûte ? »", a: "C'est du sur-mesure, cadré après le diagnostic. L'investissement se dimensionne sur le ROI du système, pas l'inverse." }
+    ];
+    const faqs = faqsData.map((f, i) => {
+      const open = i === S.faq;
+      return { ...f, open, icon: open ? "×" : "+",
+        onToggle: () => this.setState({ faq: open ? -1 : i }),
+        wrapStyle: { borderTop: i ? "1px solid rgba(255,255,255,0.07)" : "none" } };
+    });
+    return {
+      faqs,
+      revealed: S.revealed,
+      notRevealed: !S.revealed,
+      showIntro: !S.introDone,
+      reveal: () => this.setState({ revealed: true }),
+      stat1: "+" + S.c1.toLocaleString("fr-FR"),
+      stat2: "+" + S.c2 + " %",
+      statsRef: (el) => { this._stats = el; },
+      spotRef: (el) => { this._spot = el; },
+      widgetRef: (el) => { this._widget = el; },
+      widgetFrameStyle: {
+        position: 'relative', height: (wOpen ? wH : wWin) + 'px', borderRadius: wOpen ? '18px' : '14px', overflow: 'hidden',
+        border: '1px solid rgba(167,139,250,0.3)', background: '#0d0d22', boxShadow: '0 18px 60px -30px rgba(124,92,246,0.55)',
+        transition: 'height .5s cubic-bezier(0.22,1,0.36,1), border-radius .5s ease'
+      },
+      widgetIframeStyle: {
+        position: 'absolute', left: 0, top: (wOpen ? 0 : -wOff) + 'px', width: '100%', height: wH + 'px', border: 0, background: 'transparent',
+        transition: 'top .5s cubic-bezier(0.22,1,0.36,1)'
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

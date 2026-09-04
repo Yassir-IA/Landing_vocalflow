@@ -15,3 +15,9 @@ desktop.ini
 *.tmp
 .vscode/
 .idea/
+
+# Bundle Claude Design : on versionne la maquette, son runtime, le logo et les notes,
+# pas les captures de référence ni la vignette (≈ 6 Mo d'images sans usage dans le site)
+design-source/**/uploads/
+design-source/**/.thumbnail
+design-source/**/_ref/*.jpg

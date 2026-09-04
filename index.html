@@ -3,30 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VocalFlow | L'agent vocal IA qui décroche 24/7</title>
-  <meta name="description" content="VocalFlow prend en charge vos appels entrants et sortants avec une voix humaine, 24h/24 : accueil client, prise de rendez-vous, relance, prospection. Audit gratuit de 30 min.">
-  <!-- PAGE PROVISOIRE : sera remplacée par l'implémentation de design-source/Landing VocalFlow.dc.html.
-       Retirer la balise noindex ci-dessous une fois la vraie landing en place. -->
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#071A2B">
+  <title>VocalFlow | L'IA vocale qui décroche 24/7</title>
+  <meta name="description" content="VocalFlow décroche vos appels en une seconde, jour et nuit, puis qualifie, prend le rendez-vous, remplit votre CRM et relance. Diagnostic gratuit de 30 minutes.">
+  <meta name="theme-color" content="#0a0a1c">
   <meta name="color-scheme" content="dark">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="VocalFlow | L'agent vocal IA qui décroche 24/7">
-  <meta property="og:description" content="Un agent conversationnel intelligent prend en charge vos appels entrants et sortants. Automatique, humain, efficace.">
+  <meta property="og:title" content="VocalFlow. Ne manquez plus jamais un seul appel.">
+  <meta property="og:description" content="L'infrastructure téléphonique complète de votre entreprise : décroché en 1 seconde, qualification, RDV, CRM, relances. Testez l'IA en direct.">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="VocalFlow">
-  <!-- URLs absolues (obligatoires pour les aperçus LinkedIn/WhatsApp). Si le domaine change : remplacer vocal-flow.fr ici, dans robots.txt et sitemap.xml. -->
+  <!-- URLs absolues (obligatoires pour les aperçus LinkedIn/WhatsApp). Si le domaine change : remplacer vocal-flow.fr ici, dans le JSON-LD, robots.txt et sitemap.xml. -->
   <link rel="canonical" href="https://vocal-flow.fr/">
   <meta property="og:url" content="https://vocal-flow.fr/">
   <meta property="og:image" content="https://vocal-flow.fr/assets/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="VocalFlow — l'agent vocal IA qui décroche 24/7">
+  <meta property="og:image:alt" content="VocalFlow. Ne manquez plus jamais un seul appel.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
   {
@@ -35,49 +33,302 @@
     "name": "VocalFlow",
     "url": "https://vocal-flow.fr/",
     "logo": "https://vocal-flow.fr/assets/vocalflow-logo.png",
-    "description": "Agent vocal IA pour les appels entrants et sortants des entreprises : accueil, prise de rendez-vous, relance, prospection.",
+    "description": "Agent vocal IA qui décroche les appels entrants 24/7, qualifie, prend rendez-vous, remplit le CRM et relance.",
     "email": "contact@vocal-flow.fr",
-    "founder": { "@type": "Person", "name": "Yassir Larabi" },
+    "founder": {
+      "@type": "Person",
+      "name": "Yassir Larabi",
+      "jobTitle": "Fondateur de VocalFlow, AI Manager chez Smart Funnel",
+      "sameAs": ["https://www.linkedin.com/in/yassir-larabi/"]
+    },
     "address": { "@type": "PostalAddress", "addressLocality": "Aulnay-sous-Bois", "postalCode": "93600", "addressCountry": "FR" }
   }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
+  <a class="skip-link" href="#hero">Aller au contenu</a>
 
+  <!-- Halo qui suit la souris (pointeurs fins uniquement, voir main.js) -->
+  <div class="spot" aria-hidden="true"></div>
+
+  <!-- Veil d'ouverture : logo + marque, s'efface après 1,85 s puis est retiré du DOM -->
+  <div class="veil" aria-hidden="true">
+    <div class="veil__inner">
+      <img class="veil__logo" src="/assets/vocalflow-logo-480.png" alt="" width="480" height="296">
+      <div class="veil__name">VocalFlow</div>
+    </div>
+  </div>
+
+  <!-- Navigation fixe -->
   <header class="nav-wrap">
     <nav class="nav" aria-label="Navigation principale">
-      <a href="/" class="nav__logo" aria-label="VocalFlow — accueil">
-        <img src="/assets/vocalflow-logo-480.png" alt="" width="54" height="32">
-        <span>VocalFlow</span>
+      <a href="#top" class="brand" aria-label="VocalFlow — retour en haut">
+        <img src="/assets/vocalflow-logo-480.png" alt="" width="480" height="296">
+        <span class="brand__name">VocalFlow</span>
       </a>
-      <a href="https://calendly.com/contact-vocal-flow/audit-ia-vocale" class="btn btn--primary" data-calendly target="_blank" rel="noopener">Réserver un audit</a>
+      <a href="#diagnostic" class="btn btn--primary btn--nav"><span class="btn--nav__full">Réserver mon diagnostic</span><span class="btn--nav__short">Mon diagnostic</span></a>
     </nav>
   </header>
 
-  <main id="main" class="placeholder">
-    <div class="placeholder__inner">
-      <img class="placeholder__logo" src="/assets/vocalflow-logo.png" alt="VocalFlow" width="1600" height="951" fetchpriority="high">
-      <h1>L'agent vocal IA qui <span>décroche 24/7</span>.</h1>
-      <p class="placeholder__lead">Accueil client, prise de rendez-vous, relance, prospection : VocalFlow prend en charge vos appels entrants et sortants avec une voix humaine. Automatique, humain, efficace.</p>
-      <div class="placeholder__ctas">
-        <a href="https://calendly.com/contact-vocal-flow/audit-ia-vocale" class="btn btn--primary" data-calendly target="_blank" rel="noopener">Réserver mon audit IA vocale (30&nbsp;min)</a>
-        <a href="tel:+33189316089" class="btn btn--outline">Écouter l'agent : 01&nbsp;89&nbsp;31&nbsp;60&nbsp;89</a>
-      </div>
-      <p class="placeholder__note">Nouveau site en cours de mise en ligne.</p>
-    </div>
-  </main>
+  <div id="top" class="page">
+    <main>
+      <!-- S1 Hero -->
+      <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero__grid" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__eyebrow rise">
+            <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+            <span>Une IA qui parle <b>comme un humain</b></span>
+          </div>
+          <h1 id="hero-title" class="hero__title rise">Ne manquez plus jamais <span class="grad-text">un seul appel.</span></h1>
+          <p class="hero__lead rise">VocalFlow décroche en une seconde, jour et nuit, et transforme l'appel en rendez-vous dans votre agenda.</p>
+          <div class="hero__cta rise">
+            <div class="cta-row">
+              <a href="#diagnostic" class="btn btn--primary">Réserver mon diagnostic (30&nbsp;min) <span class="arrow" aria-hidden="true">→</span></a>
+              <a href="#demo-live" class="btn btn--ghost">Tester l'IA en direct</a>
+            </div>
+            <div class="hero__note">Gratuit. Vous repartez avec votre plan d'action, qu'on travaille ensemble ou non.</div>
+          </div>
+        </div>
+      </section>
 
-  <footer class="footer">
-    <div class="footer__inner">
-      <a href="/" class="footer__brand"><img src="/assets/vocalflow-logo-480.png" alt="" width="42" height="25">VocalFlow</a>
-      <nav class="footer__links" aria-label="Liens légaux">
-        <a href="/mentions-legales">Mentions légales</a>
-        <a href="/politique-confidentialite">Politique de confidentialité</a>
-        <a href="mailto:contact@vocal-flow.fr">contact@vocal-flow.fr</a>
-      </nav>
-    </div>
-  </footer>
+      <!-- S2 Preuves flash -->
+      <section class="stats" aria-label="Chiffres clés">
+        <div class="stats__box">
+          <div class="stat">
+            <div class="stat__num grad-text" data-count="100000" data-prefix="+">+100&#8239;000</div>
+            <div class="stat__label">appels traités par nos agents IA</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num grad-text" data-count="75" data-prefix="+" data-suffix=" %">+75 %</div>
+            <div class="stat__label">d'appels terminés sur une note positive</div>
+          </div>
+          <div class="stat stat--wide">
+            <div class="stat__num grad-text">&lt; 1 s</div>
+            <div class="stat__label">de latence : une conversation fluide, sans temps mort</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S3 Le problème -->
+      <section class="problem" aria-labelledby="problem-title">
+        <p class="eyebrow">01 · Le problème</p>
+        <h2 id="problem-title" class="h2 h2--wide">Le téléphone sonne. Personne ne décroche. <span class="accent">Le client appelle votre concurrent.</span></h2>
+        <div class="quotes">
+          <p class="quote">« Un appel sur quatre arrive le soir, le week-end, ou pendant que toute l'équipe est occupée. »</p>
+          <p class="quote">« Le lead rappelé une heure trop tard avait déjà signé ailleurs. »</p>
+          <p class="quote">« Nos meilleures personnes passent leurs journées à répondre aux dix mêmes questions. »</p>
+          <p class="quote">« Nous décrochons encore nous-même entre deux rendez-vous, parce que personne d'autre ne peut le faire. »</p>
+        </div>
+        <p class="problem__calc">Faites le calcul : votre panier moyen, multiplié par les appels sans réponse de la semaine, multiplié par 52. Ce chiffre, c'est ce que votre standard laisse filer chaque année, pendant que votre budget publicité continue de faire sonner un téléphone que personne ne décroche. Et il ne compte pas vos propres heures : tant que les appels reposent sur vous, impossible de vous en détacher, et votre standard devient le plafond de votre croissance.</p>
+        <div class="law">
+          <p>Et depuis le 11 août 2026, la loi interdit le démarchage téléphonique sans consentement préalable. La prospection sortante se referme.</p>
+          <p class="law__punch">Chaque appel entrant <span class="grad-text">vaut de l'or.</span> Et vous en laissez filer.</p>
+        </div>
+      </section>
+
+      <!-- S4 Démo en direct -->
+      <section id="demo-live" class="demo" aria-labelledby="demo-title">
+        <p class="eyebrow">02 · La preuve, en direct</p>
+        <h2 id="demo-title" class="h2">Ne me croyez pas sur parole. <span class="accent">Appelez-la.</span></h2>
+        <p class="lead">Notre IA de démonstration est en ligne, en ce moment même. Coupez-lui la parole, changez de sujet, parlez vite, posez des questions pièges : elle suit, sans jamais perdre le fil.</p>
+        <div class="demo__card">
+          <div class="demo__idle">
+            <button type="button" class="btn btn--accent demo__reveal">Tester l'IA en direct</button>
+          </div>
+          <div class="demo__live" hidden>
+            <div class="status"><span class="status__dot" aria-hidden="true"></span><span class="status__text">EN LIGNE MAINTENANT</span></div>
+            <div class="demo__sub">Notre agent décroche dans la seconde, 24h/24.</div>
+            <div class="widget">
+              <div class="widget__frame">
+                <div class="widget__loading" aria-hidden="true">CONNEXION À L'AGENT…</div>
+                <iframe title="Tester l'agent VocalFlow en direct" data-src="https://app.vocal-flow.fr/agent-test-public?token=dpl_apt_5d28abdd1e798d0c195125b5055f5cab32efa5df6ee1982fee06af8acb499785&amp;agentId=01M1MCRBT5XDGEQPH5RAGVAJAZ" allow="microphone; autoplay" scrolling="no"></iframe>
+              </div>
+            </div>
+            <p class="demo__note">L'agent de démonstration suit un script générique. Le vôtre sera configuré sur votre métier, vos offres et vos règles.</p>
+          </div>
+          <noscript><p class="demo__note"><a href="https://app.vocal-flow.fr/agent-test-public?token=dpl_apt_5d28abdd1e798d0c195125b5055f5cab32efa5df6ee1982fee06af8acb499785&amp;agentId=01M1MCRBT5XDGEQPH5RAGVAJAZ" target="_blank" rel="noopener">Ouvrir la démo dans un nouvel onglet</a></p></noscript>
+        </div>
+      </section>
+
+      <!-- S5 Infrastructure -->
+      <section class="infra" aria-labelledby="infra-title">
+        <p class="eyebrow">03 · Au-delà du décroché</p>
+        <h2 id="infra-title" class="h2">Répondre n'est que <span class="accent">le début.</span></h2>
+        <p class="lead lead--600">Un appel décroché qui ne produit rien reste un appel perdu. Pendant et après chaque conversation, l'agent travaille pour vous.</p>
+        <div class="cards">
+          <div class="card"><h3>Qualification en temps réel.</h3><p>Besoin, urgence, profil : l'agent trie chaque appelant selon vos critères et fait remonter ce qui compte.</p></div>
+          <div class="card"><h3>Prise de rendez-vous automatique.</h3><p>Agenda synchronisé : l'agent propose un créneau, le cale et le confirme pendant l'appel.</p></div>
+          <div class="card"><h3>CRM rempli tout seul.</h3><p>Fiches créées et enrichies à chaque appel. Zéro saisie manuelle, zéro post-it perdu.</p></div>
+          <div class="card"><h3>Transcription et résumé.</h3><p>Chaque conversation transcrite et résumée, avec les actions de suivi. Rien ne se perd, tout se retrouve.</p></div>
+          <div class="card"><h3>Relances automatiques.</h3><p>SMS ou WhatsApp envoyés après l'appel : confirmation, lien utile, rappel de rendez-vous.</p></div>
+          <div class="card"><h3>Transfert vers un humain.</h3><p>Dès qu'un appel l'exige, l'agent passe la main à la bonne personne, selon vos règles.</p></div>
+        </div>
+        <p class="infra__outro">L'appel devient un rendez-vous posé, une fiche client remplie, une relance envoyée. <b>Voilà ce qu'on installe chez vous.</b></p>
+      </section>
+
+      <!-- S7 Le chemin -->
+      <section class="path" aria-labelledby="path-title">
+        <p class="eyebrow">04 · Le chemin</p>
+        <h2 id="path-title" class="h2">Quatre étapes, et vos appels <span class="accent">sont décrochés.</span></h2>
+        <ol class="steps">
+          <li class="step">
+            <div class="step__head"><span class="step__badge">01</span><span class="step__ghost" aria-hidden="true">01</span></div>
+            <h3 class="step__title">Diagnostic (30 min).</h3>
+            <p>On cartographie votre flux d'appels : volumes, pics, appels ratés, et ce qu'ils vous coûtent.</p>
+          </li>
+          <li class="step">
+            <div class="step__head"><span class="step__badge">02</span><span class="step__ghost" aria-hidden="true">02</span></div>
+            <h3 class="step__title">Votre plan.</h3>
+            <p>Ce que l'agent prendra en charge, dans quel ordre, avec quels garde-fous. Le plan vous appartient, avec ou sans moi.</p>
+          </li>
+          <li class="step">
+            <div class="step__head"><span class="step__badge">03</span><span class="step__ghost" aria-hidden="true">03</span></div>
+            <h3 class="step__title step__title--row"><span>Agent en production</span><span class="chip">3 À 5 JOURS</span></h3>
+            <p>Configuré, challengé avec vous, branché à vos outils. Vos appels sont décrochés.</p>
+          </li>
+          <li class="step">
+            <div class="step__head"><span class="step__badge">04</span><span class="step__ghost" aria-hidden="true">04</span></div>
+            <h3 class="step__title">Opération mensuelle.</h3>
+            <p>Écoute des appels, corrections, améliorations : un agent laissé seul se dégrade, un agent opéré progresse chaque semaine. Je ne disparais pas après la livraison.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- S8 L'offre -->
+      <section id="offre" class="offer" aria-labelledby="offer-title">
+        <p class="eyebrow">05 · L'offre</p>
+        <h2 id="offer-title" class="h2">Deux façons de <span class="accent">travailler ensemble.</span></h2>
+        <div class="plans">
+          <div class="plan">
+            <div class="plan__kicker">Pour démarrer</div>
+            <h3 class="plan__name">La mise en service</h3>
+            <p class="plan__desc">Votre agent vocal en production, configuré pour votre entreprise. Vous jugez sur pièce.</p>
+            <ul class="checklist">
+              <li><span class="check" aria-hidden="true">✓</span><span>Diagnostic de votre flux d'appels et plan d'action</span></li>
+              <li><span class="check" aria-hidden="true">✓</span><span>Configuration sur votre base métier : vocabulaire, offres, règles, agenda</span></li>
+              <li><span class="check" aria-hidden="true">✓</span><span>Phase de test : vous le challengez avant la mise en ligne</span></li>
+              <li><span class="check" aria-hidden="true">✓</span><span>En service en 3 à 5 jours, votre équipe formée à l'usage</span></li>
+            </ul>
+          </div>
+          <div class="plan plan--featured">
+            <div class="plan__kicker">Places limitées chaque mois</div>
+            <h3 class="plan__name">L'opération mensuelle</h3>
+            <p class="plan__desc">Votre standard IA, supervisé et amélioré en continu, par la personne qui l'a construit.</p>
+            <ul class="checklist">
+              <li><span class="check" aria-hidden="true">✓</span><span>Écoute et contrôle qualité des appels, chaque semaine</span></li>
+              <li><span class="check" aria-hidden="true">✓</span><span>Corrections et améliorations en continu</span></li>
+              <li><span class="check" aria-hidden="true">✓</span><span>Nouvelles capacités au fil de vos besoins : relances, campagnes de rappel, extensions</span></li>
+              <li><span class="check" aria-hidden="true">✓</span><span>Canal direct avec moi, sans intermédiaire</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="offer__note">Pas de tarif public : chaque projet est dimensionné après le diagnostic, sur le ROI attendu.</p>
+        <div class="cta-block">
+          <a href="#diagnostic" class="btn btn--primary">Réserver mon diagnostic (30&nbsp;min) <span class="arrow" aria-hidden="true">→</span></a>
+          <div class="cta-block__note">Le diagnostic est gratuit. Le plan est à vous, dans tous les cas.</div>
+        </div>
+      </section>
+
+      <!-- S9 Marque blanche -->
+      <section class="partner" aria-labelledby="partner-title">
+        <div class="partner__card">
+          <div class="partner__body">
+            <p class="partner__kicker">Agences &amp; intégrateurs</p>
+            <h2 id="partner-title" class="partner__title">VocalFlow existe <span class="accent">en marque blanche.</span></h2>
+            <p class="partner__text">Vous accompagnez des entreprises et voulez leur proposer l'IA vocale sous votre propre marque ? Infrastructure gérée, abonnement accessible, sans investissement de départ. Une dizaine de partenaires déploient déjà VocalFlow auprès de leurs clients.</p>
+          </div>
+          <a href="mailto:contact@vocal-flow.fr?subject=Partenariat%20marque%20blanche%20VocalFlow" class="btn btn--ghost btn--sm" data-partner>Devenir partenaire →</a>
+        </div>
+      </section>
+
+      <!-- S10 Qui je suis -->
+      <section class="about" aria-labelledby="about-title">
+        <div class="about__inner">
+          <div class="about__photo">
+            <picture>
+              <source type="image/webp" srcset="/assets/portrait-720.webp 720w, /assets/portrait.webp 650w" sizes="(max-width: 900px) 420px, 380px">
+              <img src="/assets/portrait.jpg" srcset="/assets/portrait-720.jpg 720w, /assets/portrait.jpg 650w" sizes="(max-width: 900px) 420px, 380px" alt="Yassir Larabi, fondateur de VocalFlow" width="650" height="812" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="about__body">
+            <p class="eyebrow eyebrow--left">06 · Qui je suis</p>
+            <h2 id="about-title" class="about__name">Yassir Larabi</h2>
+            <p class="about__role">Fondateur de VocalFlow · AI Manager chez Smart Funnel</p>
+            <ul class="checklist checklist--about">
+              <li><span class="check" aria-hidden="true">✓</span><span>Fondateur de VocalFlow : plus de 100 000 appels traités par mes agents.</span></li>
+              <li><span class="check" aria-hidden="true">✓</span><span>AI Manager chez Smart Funnel : opérer des systèmes IA que de vraies équipes utilisent, c'est mon quotidien.</span></li>
+              <li><span class="check" aria-hidden="true">✓</span><span>Dans les agents IA et l'automatisation depuis 2023, via mon agence LBI.</span></li>
+            </ul>
+            <p class="about__text">Le téléphone est le canal que je connais le mieux : je l'écoute, je le règle et je l'améliore toutes les semaines. Cette page vous propose ce savoir-faire, sur votre ligne.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- S11 FAQ -->
+      <section id="faq" class="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">07 · FAQ</p>
+        <h2 id="faq-title" class="h2">Les questions qu'on me pose <span class="accent">vraiment.</span></h2>
+        <div class="faq__list">
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a-1"><span>« On a déjà quelqu'un qui répond au téléphone. »</span><span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" id="faq-a-1"><p>Parfait : l'agent prend ce qui déborde. Les appels simultanés, les soirs, les week-ends, les pics d'activité. Votre équipe garde les conversations à valeur, l'IA absorbe le reste.</p></div>
+          </div>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a-2"><span>« Combien de temps pour l'installer ? »</span><span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" id="faq-a-2"><p>3 à 5 jours, et on s'occupe de tout : diagnostic, configuration sur votre base métier, phase de test où vous le challengez, mise en service. Vous n'avez qu'à valider.</p></div>
+          </div>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a-3"><span>« Et si elle ne sait pas répondre ? »</span><span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" id="faq-a-3"><p>Elle transfère vers un humain, selon vos règles. Et chaque cas non couvert est ajouté à sa base la semaine même : c'est ça, un système opéré.</p></div>
+          </div>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a-4"><span>« On va entendre que c'est un robot ? »</span><span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" id="faq-a-4"><p>Appelez la démo et jugez : intonations naturelles, pauses, adaptation au rythme de votre interlocuteur. La voix est choisie avec vous : timbre, ton, énergie.</p></div>
+          </div>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a-5"><span>« Ça marche pour mon secteur ? »</span><span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" id="faq-a-5"><p>L'agent est configuré sur votre base métier : vos services, vos offres, vos règles. Si vos appels entrants ont de la valeur, il y a un système à construire. Le diagnostic vous le dira honnêtement, y compris si la réponse est non.</p></div>
+          </div>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a-6"><span>« Une IA au téléphone, c'est légal ? »</span><span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" id="faq-a-6"><p>Oui : l'agent traite vos appels entrants et le suivi de personnes qui vous ont sollicités, exactement le cadre que la loi de 2026 laisse ouvert. Les règles d'information des appelants se configurent selon vos obligations, et on les cadre ensemble au diagnostic.</p></div>
+          </div>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a-7"><span>« Combien ça coûte ? »</span><span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" id="faq-a-7"><p>C'est du sur-mesure, cadré après le diagnostic. L'investissement se dimensionne sur le ROI du système, pas l'inverse.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S12 CTA final -->
+      <section id="diagnostic" class="final" aria-labelledby="final-title">
+        <div class="final__inner">
+          <h2 id="final-title" class="final__title">Réservez votre diagnostic. <span class="grad-text">Repartez avec votre plan.</span></h2>
+          <p class="final__lead">30 minutes, gratuites, en visio. On chiffre ce que vos appels manqués vous coûtent, et on identifie le système pour l'arrêter, qu'on travaille ensemble ou non.</p>
+          <div class="cta-block final__cta">
+            <a href="https://calendly.com/contact-vocal-flow/audit-ia-vocale" class="btn btn--primary btn--final" data-calendly target="_blank" rel="noopener">Réserver mon diagnostic (30&nbsp;min) <span class="arrow" aria-hidden="true">→</span></a>
+            <div class="final__tag">SANS ENGAGEMENT</div>
+            <div class="final__alt">Vous préférez l'entendre d'abord ? <a href="#demo-live">Testez l'IA en direct.</a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="/assets/vocalflow-logo-480.png" alt="VocalFlow" width="480" height="296">
+          <span>© 2026 VocalFlow · LBI Agency · micro-entreprise française</span>
+        </div>
+        <nav class="footer__links" aria-label="Liens légaux">
+          <a href="/mentions-legales">Mentions légales</a>
+          <a href="/politique-confidentialite">Confidentialité</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
   <script src="/main.js" defer></script>
 </body>
 </html>

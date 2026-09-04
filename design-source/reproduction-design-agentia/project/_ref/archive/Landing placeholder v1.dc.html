@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:104px}
+body{margin:0;background:#0a0a1c;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#a78bfa;text-decoration:none}
+a:hover{color:#c4b5fd}
+@keyframes mqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div id="top" style="background:#0a0a1c;color:#f5f4fb;overflow:clip">
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(16px);background:rgba(8,8,24,0.66);border-bottom:1px solid rgba(255,255,255,0.05)">
+  <div style="max-width:1400px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between">
+    <a href="#top" style="display:flex;align-items:center;gap:11px">
+      <img src="assets/vocalflow-logo.png" alt="VocalFlow" style="height:38px;display:block">
+      <span style="font-weight:800;font-size:19px;letter-spacing:-0.01em;background:linear-gradient(92deg,#8fb0ff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">VocalFlow</span>
+    </a>
+    <a href="#demo" style="display:inline-flex;align-items:center;padding:11px 24px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:15.5px;box-shadow:0 8px 26px -6px rgba(124,92,246,0.6);transition:all .2s ease" style-hover="transform:translateY(-1px);box-shadow:0 12px 32px -6px rgba(124,92,246,0.75);color:#ffffff">Réserver</a>
+  </div>
+</div>
+
+<section data-screen-label="Hero" style="position:relative;padding:172px 24px 96px;background-image:radial-gradient(700px 460px at 12% 18%, rgba(91,108,255,0.16), transparent 65%),radial-gradient(640px 420px at 88% 26%, rgba(139,92,246,0.14), transparent 65%),radial-gradient(520px 380px at 50% 100%, rgba(91,140,255,0.07), transparent 70%)">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,255,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(148,163,255,0.05) 1px, transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 75% 62% at 50% 32%, #000 0%, transparent 72%);mask-image:radial-gradient(ellipse 75% 62% at 50% 32%, #000 0%, transparent 72%)"></div>
+  <div style="position:relative;max-width:980px;margin:0 auto;text-align:center">
+    <div style="display:flex;justify-content:center">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:999px;padding:9px 18px">
+        <span style="display:inline-flex;gap:3px">
+          <span style="width:19px;height:19px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:19px;height:19px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:19px;height:19px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:19px;height:19px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:19px;height:19px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span>
+        </span>
+        <span style="font-size:14.5px;color:#cfcde0"><b style="color:#fff">4,9/5</b> · 384 avis sur <span style="color:#00b67a">★</span> <b style="color:#fff">Trustpilot</b></span>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:34px">
+      <div style="width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid #0a0a1c;background:#181835"><image-slot id="av-nova" shape="circle" placeholder="agent 1"></image-slot></div>
+      <div style="width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid #0a0a1c;background:#181835;margin-left:-12px"><image-slot id="av-leo" shape="circle" placeholder="agent 2"></image-slot></div>
+      <div style="width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid #0a0a1c;background:#181835;margin-left:-12px"><image-slot id="av-mia" shape="circle" placeholder="agent 3"></image-slot></div>
+    </div>
+    <div style="margin-top:14px;font-size:15.5px;color:#9b97b8"><b style="color:#a78bfa">3 agents IA</b> à votre service</div>
+    <h1 style="font-size:58px;font-weight:800;line-height:1.09;letter-spacing:-0.025em;color:#f5f4fb;margin:18px auto 0;max-width:920px">Votre équipe <span style="background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">d'agents vocaux IA</span> qui répondent pour votre entreprise.</h1>
+    <p style="margin:26px auto 0;max-width:640px;font-size:18px;line-height:1.7;color:#b8b6cf">Récupérez du temps en déléguant : une équipe d'agents IA experts de la voix, prêts à répondre, qualifier et prendre des rendez-vous 24h/24 et 7j/7 pour votre société.</p>
+    <div style="display:flex;justify-content:center;gap:16px;margin-top:38px;flex-wrap:wrap">
+      <a href="#tarifs" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:16.5px;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 16px 40px -6px rgba(124,92,246,0.7);color:#ffffff">Essayer gratuitement <span style="font-size:18px">→</span></a>
+      <a href="#demo" style="display:inline-flex;align-items:center;padding:16px 32px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:600;font-size:16.5px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Réserver une démo</a>
+    </div>
+    <div style="margin-top:96px"><a href="#agents" style="font-size:12px;letter-spacing:0.3em;font-weight:600;color:#77748f;text-transform:uppercase">Découvrez nos agents <span style="font-size:14px">▾</span></a></div>
+  </div>
+</section>
+
+<section id="agents" data-screen-label="Équipe" style="position:relative;padding:96px 24px 40px;background-image:radial-gradient(760px 420px at 50% 0%, rgba(91,108,255,0.07), transparent 70%)">
+  <div style="display:flex;gap:10px;justify-content:center;align-items:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#9b97b8;text-transform:uppercase">Votre équipe <span style="width:6px;height:6px;border-radius:50%;background:#8b5cf6;display:inline-block"></span></div>
+  <h2 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;line-height:1.18;text-align:center;color:#f5f4fb;margin:16px auto 0;max-width:1000px">Une équipe <span style="color:#a78bfa">d'agents IA</span>, prête à vous faire gagner du temps dès maintenant</h2>
+  <div style="max-width:1160px;margin:52px auto 0;display:flex;flex-direction:column;gap:16px">
+    <sc-for list="{{ agents }}" as="ag" hint-placeholder-count="3">
+      <div style="{{ ag.cardStyle }}" onClick="{{ ag.onClick }}">
+        <div style="display:flex;align-items:center;gap:20px">
+          <div style="{{ ag.avStyle }}"><image-slot id="card-{{ ag.id }}" shape="circle" placeholder="photo"></image-slot></div>
+          <div>
+            <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font-size:25px;font-weight:800;color:#f5f4fb">{{ ag.name }}</span><span style="font-size:15.5px;color:#9b97b8">{{ ag.role }}</span></div>
+            <div style="margin-top:6px;font-size:17.5px;font-weight:700;color:#a78bfa">{{ ag.tagline }}</div>
+          </div>
+        </div>
+        <sc-if value="{{ ag.open }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:18px 0 0;font-size:16.5px;line-height:1.7;color:#b8b6cf;max-width:920px">{{ ag.desc }}</p>
+          <div style="display:flex;flex-direction:column;gap:11px;margin-top:18px">
+            <sc-for list="{{ ag.checks }}" as="c" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:16px;color:#e8e6f5">{{ c }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Presse" style="padding:80px 0 20px">
+  <div style="display:flex;gap:10px;justify-content:center;align-items:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#9b97b8;text-transform:uppercase">Ils parlent de nous</div>
+  <div style="margin-top:38px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)">
+    <div style="display:flex;width:max-content;animation:mqL 38s linear infinite">
+      <sc-for list="{{ pressLoop }}" as="p" hint-placeholder-count="6">
+        <div style="background:#ffffff;border-radius:14px;height:64px;min-width:160px;display:flex;align-items:center;justify-content:center;padding:0 22px;margin-right:22px"><div style="width:118px;height:36px"><image-slot id="press-{{ p.id }}" shape="rect" placeholder="{{ p.ph }}"></image-slot></div></div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:16px;margin-top:60px;flex-wrap:wrap">
+    <a href="#tarifs" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:16.5px;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);color:#ffffff">Essayer gratuitement <span style="font-size:18px">→</span></a>
+    <a href="#demo" style="display:inline-flex;align-items:center;padding:16px 32px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:600;font-size:16.5px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">J'aimerais être rappelé</a>
+  </div>
+</section>
+
+<sc-if value="{{ showCollab }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="Collaboration" style="position:relative;padding:96px 24px 30px;background-image:radial-gradient(700px 460px at 80% 30%, rgba(139,92,246,0.09), transparent 65%)">
+  <div style="display:flex;gap:10px;justify-content:center;align-items:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#9b97b8;text-transform:uppercase">Collaboration unique <span style="width:6px;height:6px;border-radius:50%;background:#34d399;display:inline-block"></span></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:26px;margin-top:34px;flex-wrap:wrap">
+    <span style="display:inline-flex;align-items:center;gap:10px"><img src="assets/vocalflow-logo.png" alt="VocalFlow" style="height:40px;display:block"><span style="font-weight:800;font-size:24px;background:linear-gradient(92deg,#8fb0ff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">VocalFlow</span></span>
+    <span style="font-size:24px;color:#77748f;font-weight:600">×</span>
+    <div style="width:170px;height:46px"><image-slot id="partner-logo" shape="rect" placeholder="logo partenaire"></image-slot></div>
+  </div>
+  <p style="margin:30px auto 0;max-width:660px;text-align:center;font-size:17.5px;line-height:1.7;color:#b8b6cf"><b style="color:#f5f4fb">VocalFlow s'associe à son partenaire technologique</b>, référence mondiale de l'intelligence artificielle, pour fournir la meilleure technologie vocale à ses utilisateurs.</p>
+  <div style="position:relative;max-width:1240px;margin:52px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#0d0d22;box-shadow:0 0 90px rgba(124,92,246,0.22)">
+    <image-slot id="video-poster" shape="rect" placeholder="poster de la vidéo (motion design)"></image-slot>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+      <div style="width:94px;height:94px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 44px -6px rgba(124,92,246,0.7)"><div style="width:0;height:0;border-left:26px solid #fff;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:7px"></div></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:16px;margin-top:60px;flex-wrap:wrap">
+    <a href="#tarifs" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:rgba(139,92,246,0.07);border:1px solid rgba(167,139,250,0.5);color:#a78bfa;font-weight:700;font-size:16.5px;transition:all .2s ease" style-hover="background:rgba(139,92,246,0.14);color:#c4b5fd">Essayer gratuitement <span style="font-size:18px">→</span></a>
+    <a href="#demo" style="display:inline-flex;align-items:center;padding:16px 32px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:600;font-size:16.5px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Réserver une démo</a>
+  </div>
+</section>
+</sc-if>
+
+<section id="avis" data-screen-label="Avis clients" style="padding:96px 0 30px">
+  <h2 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:0">Ce que nos clients en disent</h2>
+  <div style="display:flex;justify-content:center;margin-top:30px">
+    <div style="display:inline-flex;flex-direction:column;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:22px 34px">
+      <div style="display:flex;align-items:center;gap:7px"><span style="color:#00b67a;font-size:17px">★</span><span style="font-weight:700;font-size:16.5px;color:#f5f4fb">Trustpilot</span></div>
+      <div style="display:flex;gap:3px">
+        <span style="width:24px;height:24px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px">★</span><span style="width:24px;height:24px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px">★</span><span style="width:24px;height:24px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px">★</span><span style="width:24px;height:24px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px">★</span><span style="width:24px;height:24px;background:#00b67a;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px">★</span>
+      </div>
+      <div style="font-size:14.5px;color:#9b97b8"><b style="color:#f5f4fb">4,9/5</b> · 384 avis vérifiés sur Trustpilot</div>
+    </div>
+  </div>
+  <div style="margin-top:52px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)">
+    <div style="display:flex;width:max-content;align-items:flex-start;animation:mqL 58s linear infinite">
+      <sc-for list="{{ rowA }}" as="t" hint-placeholder-count="4">
+        <div style="width:330px;margin-right:20px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:22px 24px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <span style="display:inline-flex;gap:2px"><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span></span>
+            <span style="font-size:10.5px;letter-spacing:0.18em;font-weight:700;color:#6d6a85">TRUSTPILOT</span>
+          </div>
+          <div style="margin-top:14px;font-size:16.5px;font-weight:700;color:#f5f4fb;line-height:1.35">{{ t.t }}</div>
+          <p style="margin:10px 0 0;font-size:14.5px;line-height:1.65;color:#a5a2bd">« {{ t.q }} »</p>
+          <div style="margin-top:14px;font-size:14px"><b style="color:#f5f4fb">{{ t.a }}</b><span style="color:#77748f"> · {{ t.r }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;width:max-content;align-items:flex-start;animation:mqR 64s linear infinite;margin-top:20px">
+      <sc-for list="{{ rowB }}" as="t" hint-placeholder-count="4">
+        <div style="width:330px;margin-right:20px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:22px 24px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <span style="display:inline-flex;gap:2px"><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span><span style="width:18px;height:18px;background:#00b67a;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px">★</span></span>
+            <span style="font-size:10.5px;letter-spacing:0.18em;font-weight:700;color:#6d6a85">TRUSTPILOT</span>
+          </div>
+          <div style="margin-top:14px;font-size:16.5px;font-weight:700;color:#f5f4fb;line-height:1.35">{{ t.t }}</div>
+          <p style="margin:10px 0 0;font-size:14.5px;line-height:1.65;color:#a5a2bd">« {{ t.q }} »</p>
+          <div style="margin-top:14px;font-size:14px"><b style="color:#f5f4fb">{{ t.a }}</b><span style="color:#77748f"> · {{ t.r }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:16px;margin-top:60px;flex-wrap:wrap">
+    <a href="#tarifs" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:16.5px;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);color:#ffffff">Essayer gratuitement <span style="font-size:18px">→</span></a>
+    <a href="#demo" style="display:inline-flex;align-items:center;padding:16px 32px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:600;font-size:16.5px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Réserver un appel avec un expert</a>
+  </div>
+</section>
+
+<section id="tarifs" data-screen-label="Tarifs" style="position:relative;padding:104px 24px 30px;background-image:radial-gradient(640px 420px at 10% 30%, rgba(91,108,255,0.08), transparent 65%),radial-gradient(640px 420px at 92% 60%, rgba(139,92,246,0.08), transparent 65%)">
+  <h2 style="font-size:46px;font-weight:800;letter-spacing:-0.02em;line-height:1.18;text-align:center;color:#f5f4fb;margin:0">5x plus productif,<br><span style="background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">10x moins cher</span></h2>
+  <p style="margin:22px auto 0;max-width:620px;text-align:center;font-size:17px;line-height:1.7;color:#b8b6cf">Chaque pack inclut une session d'onboarding sur-mesure avec notre équipe d'experts en IA, pour une prise en main ultra-rapide.</p>
+  <div style="display:flex;justify-content:center;margin-top:36px">
+    <div style="display:inline-flex;gap:6px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.09);border-radius:999px;padding:6px">
+      <div onClick="{{ setAnnuel }}" style="{{ annBtn }}">Annuel <span style="font-size:12px;padding:3px 9px;border-radius:999px;background:rgba(139,92,246,0.18);color:#a78bfa;font-weight:700">-25%</span></div>
+      <div onClick="{{ setMensuel }}" style="{{ mensBtn }}">Mensuel <span style="font-size:12px;padding:3px 9px;border-radius:999px;background:rgba(139,92,246,0.18);color:#a78bfa;font-weight:700">-10%</span></div>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:48px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start">
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:30px">
+      <div style="font-size:24px;font-weight:800;color:#f5f4fb">Essentiel</div>
+      <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#9b97b8">Parfait pour lancer votre standard IA rapidement, sans mise en place compliquée.</p>
+      <div style="margin-top:22px;display:flex;align-items:baseline;gap:8px"><span style="font-size:42px;font-weight:800;color:#f5f4fb">{{ priceEss }}</span><span style="font-size:15px;color:#8f8ca8">HT / mois</span></div>
+      <div style="margin-top:12px"><span style="display:inline-block;border:1px solid rgba(167,139,250,0.5);color:#a78bfa;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:0.08em">7 JOURS GRATUITS</span></div>
+      <div style="margin-top:12px;font-size:14.5px;color:#8f8ca8">Pour 5 utilisateurs</div>
+      <a href="#demo" style="margin-top:20px;display:flex;justify-content:center;align-items:center;gap:8px;padding:15px 20px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:700;font-size:16px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Essayez gratuitement <span>›</span></a>
+      <sc-if value="{{ showPromos }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:16px;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:13px 18px;text-align:center;font-size:14px;line-height:1.55;color:#9b97b8">Code : <b style="color:#a78bfa">BIENVENUE10</b> : -10% sur l'offre Essentiel mensuelle</div>
+      </sc-if>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:9px">
+        <div style="display:flex;gap:10px;align-items:center"><span style="color:#6d6a85">✕</span><span style="font-size:15px;color:#6d6a85;text-decoration:line-through">Voix premium</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="color:#6d6a85">✕</span><span style="font-size:15px;color:#6d6a85;text-decoration:line-through">Numéro dédié</span></div>
+      </div>
+      <div style="margin-top:22px;font-size:11.5px;letter-spacing:0.22em;color:#77748f;font-weight:700;text-transform:uppercase">Ce qui est inclus :</div>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Accès aux 3 agents VocalFlow</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">200 minutes d'appel incluses</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Prise de rendez-vous automatique</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Résumés d'appels par email</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Accès API</span></div>
+      </div>
+    </div>
+    <div style="background:rgba(139,92,246,0.05);border:1px solid rgba(167,139,250,0.55);border-radius:22px;padding:30px;box-shadow:0 0 70px -22px rgba(124,92,246,0.5)">
+      <div style="font-size:24px;font-weight:800;color:#f5f4fb">Pro</div>
+      <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#9b97b8">La solution idéale pour accélérer la croissance de votre entreprise.</p>
+      <div style="margin-top:22px;display:flex;align-items:baseline;gap:8px"><span style="font-size:42px;font-weight:800;color:#f5f4fb">{{ pricePro }}</span><span style="font-size:15px;color:#8f8ca8">HT / mois</span></div>
+      <div style="margin-top:12px"><span style="display:inline-block;border:1px solid rgba(167,139,250,0.5);color:#a78bfa;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:0.08em">7 JOURS GRATUITS</span></div>
+      <div style="margin-top:12px;font-size:14.5px;color:#8f8ca8">Pour 5 utilisateurs</div>
+      <a href="#demo" style="margin-top:20px;display:flex;justify-content:center;align-items:center;gap:8px;padding:15px 20px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:16px;box-shadow:0 10px 30px -8px rgba(124,92,246,0.6);transition:all .2s ease" style-hover="transform:translateY(-2px);color:#ffffff">Essayez gratuitement <span>›</span></a>
+      <sc-if value="{{ showPromos }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:16px;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:13px 18px;text-align:center;font-size:14px;line-height:1.55;color:#9b97b8">Code : <b style="color:#a78bfa">BIENVENUE10</b> : -10% sur l'offre Pro mensuelle</div>
+      </sc-if>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:9px">
+        <div style="display:flex;gap:10px;align-items:center"><span style="color:#6d6a85">✕</span><span style="font-size:15px;color:#6d6a85;text-decoration:line-through">Voix premium</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15px;color:#e8e6f5">Numéro dédié</span></div>
+      </div>
+      <div style="margin-top:22px;font-size:11.5px;letter-spacing:0.22em;color:#77748f;font-weight:700;text-transform:uppercase">Tout le plan Essentiel et :</div>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">1 000 minutes d'appel incluses<br><span style="font-size:13.5px;color:#8f8ca8">0,15€/min au-delà</span></span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Gestion complète des appels entrants</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Jusqu'à 100 appels simultanés</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Disponible en 30 langues</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Chatbot WhatsApp + site web</span></div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:30px">
+      <div style="font-size:24px;font-weight:800;color:#f5f4fb">Business+</div>
+      <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#9b97b8">Le pack 100% personnalisé pour une automatisation maximale.</p>
+      <div style="margin-top:26px;font-size:38px;font-weight:800;color:#f5f4fb">Sur demande</div>
+      <a href="#demo" style="margin-top:24px;display:flex;justify-content:center;align-items:center;gap:8px;padding:15px 20px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:700;font-size:16px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Contactez-nous <span>›</span></a>
+      <sc-if value="{{ showPromos }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:16px;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:13px 18px;text-align:center;font-size:14px;line-height:1.55;color:#9b97b8">Code : <b style="color:#a78bfa">BIENVENUE50</b> : -50% sur l'offre Business+ pluriannuelle (contactez l'équipe commerciale)</div>
+      </sc-if>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:9px">
+        <div style="display:flex;gap:10px;align-items:center"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15px;color:#a78bfa">Voix premium</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15px;color:#a78bfa">Numéro dédié</span></div>
+      </div>
+      <div style="margin-top:22px;font-size:11.5px;letter-spacing:0.22em;color:#77748f;font-weight:700;text-transform:uppercase">Tout le plan Pro et :</div>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Minutes illimitées</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Onboarding individualisé</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Support premium</span></div>
+        <div style="display:flex;gap:10px"><span style="color:#8b5cf6;font-weight:700">✓</span><span style="font-size:15.5px;color:#e8e6f5">Intégrations sur-mesure (CRM, ERP)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Comment ça marche" style="padding:104px 24px 30px">
+  <div style="display:flex;gap:10px;justify-content:center;align-items:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">Comment ça marche</div>
+  <h2 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:16px 0 0">De votre demande à la démo : <span style="color:#a78bfa">3 étapes.</span></h2>
+  <div style="position:relative;max-width:1180px;margin:52px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch">
+    <div style="position:absolute;top:56px;left:calc(33.33% - 15px);width:30px;height:1px;background:rgba(167,139,250,0.35)"></div>
+    <div style="position:absolute;top:56px;left:calc(66.66% - 15px);width:30px;height:1px;background:rgba(167,139,250,0.35)"></div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px">
+      <div style="display:flex;align-items:center;gap:16px"><span style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff">01</span><span style="font-size:54px;font-weight:800;line-height:1;color:rgba(255,255,255,0.06)">01</span></div>
+      <div style="margin-top:20px;font-size:20px;font-weight:700;color:#f5f4fb">Vous laissez vos coordonnées</div>
+      <p style="margin:10px 0 0;font-size:15.5px;line-height:1.65;color:#9b97b8">Nom, email, téléphone. 30 secondes chrono.</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px">
+      <div style="display:flex;align-items:center;gap:16px"><span style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff">02</span><span style="font-size:54px;font-weight:800;line-height:1;color:rgba(255,255,255,0.06)">02</span></div>
+      <div style="margin-top:20px;font-size:20px;font-weight:700;color:#f5f4fb">On vous rappelle sous 24h</div>
+      <p style="margin:10px 0 0;font-size:15.5px;line-height:1.65;color:#9b97b8">Un expert vous rappelle pour fixer un rendez-vous quand ça vous arrange.</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:28px 30px">
+      <div style="display:flex;align-items:center;gap:16px"><span style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff">03</span><span style="font-size:54px;font-weight:800;line-height:1;color:rgba(255,255,255,0.06)">03</span></div>
+      <div style="margin-top:20px;font-size:20px;font-weight:700;color:#f5f4fb">Démo live, calée sur vos besoins</div>
+      <p style="margin:10px 0 0;font-size:15.5px;line-height:1.65;color:#9b97b8">30 minutes pour analyser votre activité et vous montrer ce que vos agents IA feront au quotidien.</p>
+    </div>
+  </div>
+  <div ref="{{ statsRef }}" style="max-width:1180px;margin:40px auto 0;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:44px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center">
+    <div><div style="font-size:54px;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">{{ stat1 }}</div><div style="margin-top:8px;font-size:12.5px;letter-spacing:0.22em;color:#8f8ca8;text-transform:uppercase">Appels traités</div></div>
+    <div><div style="font-size:54px;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">{{ stat2 }}</div><div style="margin-top:8px;font-size:12.5px;letter-spacing:0.22em;color:#8f8ca8;text-transform:uppercase">Délai de rappel moyen</div></div>
+    <div><div style="font-size:54px;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">{{ stat3 }}</div><div style="margin-top:8px;font-size:12.5px;letter-spacing:0.22em;color:#8f8ca8;text-transform:uppercase">Durée de la démo</div></div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:16px;margin-top:60px;flex-wrap:wrap">
+    <a href="#tarifs" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:16.5px;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);color:#ffffff">Je veux mes agents IA <span style="font-size:18px">→</span></a>
+    <a href="#demo" style="display:inline-flex;align-items:center;padding:16px 32px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:600;font-size:16.5px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Réserver une démo</a>
+  </div>
+</section>
+
+<section id="faq" data-screen-label="FAQ" style="padding:100px 24px 20px">
+  <div style="display:flex;gap:10px;justify-content:center;align-items:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">Questions fréquentes</div>
+  <h2 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:16px 0 0">Les réponses avant la démo.</h2>
+  <div style="max-width:900px;margin:46px auto 0;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+      <div style="{{ f.wrapStyle }}">
+        <div onClick="{{ f.onToggle }}" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 28px;cursor:pointer">
+          <span style="font-size:17px;font-weight:700;color:#f5f4fb">{{ f.q }}</span>
+          <span style="color:#a78bfa;font-size:20px;font-weight:600;flex-shrink:0">{{ f.icon }}</span>
+        </div>
+        <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;padding:0 28px 22px;font-size:15.5px;line-height:1.65;color:#9b97b8">{{ f.a }}</p>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="demo" data-screen-label="CTA final" style="position:relative;padding:110px 24px 90px;background-image:radial-gradient(620px 420px at 8% 75%, rgba(91,108,255,0.12), transparent 65%),radial-gradient(560px 380px at 95% 40%, rgba(139,92,246,0.1), transparent 65%)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center">
+    <div>
+      <h2 style="font-size:42px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:#f5f4fb;margin:0">Regardez vos <span style="background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">agents IA</span><br>répondre en live.</h2>
+      <p style="margin:20px 0 0;max-width:440px;font-size:17px;line-height:1.7;color:#b8b6cf">Prenez votre créneau. On en garde peu chaque semaine.</p>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:15.5px;color:#cfcde0"><span style="color:#a78bfa">✓</span> 30 min en visio</div>
+        <div style="font-size:15.5px;color:#cfcde0"><span style="color:#a78bfa">✓</span> Calée sur votre activité</div>
+        <div style="font-size:15.5px;color:#cfcde0"><span style="color:#a78bfa">✓</span> Sans engagement, sans CB</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap">
+      <a href="#tarifs" style="display:inline-flex;align-items:center;gap:9px;padding:16px 30px;border-radius:999px;background:rgba(139,92,246,0.07);border:1px solid rgba(167,139,250,0.5);color:#a78bfa;font-weight:700;font-size:16px;transition:all .2s ease" style-hover="background:rgba(139,92,246,0.14);color:#c4b5fd">Essayer gratuitement <span style="font-size:17px">→</span></a>
+      <a href="#top" style="display:inline-flex;align-items:center;padding:16px 30px;border-radius:999px;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.13);color:#f5f4fb;font-weight:600;font-size:16px;transition:all .2s ease" style-hover="background:rgba(255,255,255,0.08);color:#f5f4fb">Réserver une démo</a>
+    </div>
+  </div>
+</section>
+
+<div style="border-top:1px solid rgba(255,255,255,0.06)">
+  <div style="max-width:1400px;margin:0 auto;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <div style="display:flex;align-items:center;gap:10px"><img src="assets/vocalflow-logo.png" alt="VocalFlow" style="height:24px;display:block;opacity:0.85"><span style="font-size:14px;color:#77748f">© 2026 VocalFlow · Tous droits réservés.</span></div>
+    <a href="#top" style="font-size:14px;color:#9b97b8">Mentions légales</a>
+  </div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCollab&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}, &quot;showPromos&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = { agent: 0, faq: -1, billing: "mensuel", c1: 0, c2: 0, c3: 0 };
+
+  componentDidMount() {
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => {
+        if (e.isIntersecting && !this._ran) { this._ran = true; this.animateStats(); io.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    this._t = setInterval(() => { if (this._stats) { io.observe(this._stats); clearInterval(this._t); } }, 200);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+
+  animateStats() {
+    const t0 = performance.now(), D = 1600;
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / D), e = 1 - Math.pow(1 - p, 3);
+      this.setState({ c1: Math.round(12000 * e), c2: Math.round(24 * e), c3: Math.round(30 * e) });
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  renderVals() {
+    const S = this.state;
+    const agentsData = [
+      { id: "nova", name: "Nova", role: "Agent Accueil & Standard téléphonique", tagline: "Nova décroche tous vos appels, 24h/24.",
+        desc: "Vous la briefez une seule fois, et Nova répond à chaque appel entrant : elle renseigne vos clients, filtre les demandes et transfère les appels importants à la bonne personne. Chaque conversation vous est résumée par écrit.",
+        checks: ["Réponse instantanée, zéro appel manqué", "Transfert intelligent vers la bonne personne", "Résumé écrit après chaque appel"] },
+      { id: "leo", name: "Léo", role: "Agent Prise de rendez-vous", tagline: "Léo remplit votre agenda pendant que vous travaillez.",
+        desc: "Léo propose vos créneaux disponibles, confirme les rendez-vous et relance automatiquement les clients qui ne répondent pas. Votre agenda se remplit tout seul.",
+        checks: ["Synchronisation avec votre agenda", "Confirmations et rappels automatiques", "Relance des rendez-vous manqués"] },
+      { id: "mia", name: "Mia", role: "Agent Support & SAV", tagline: "Mia répond à vos clients sur votre site et par téléphone.",
+        desc: "Mia prend en charge les questions récurrentes de vos clients, suit les dossiers en cours et escalade vers votre équipe quand c'est nécessaire.",
+        checks: ["Disponible 24h/24, 7j/7", "Réponses basées sur vos documents", "Escalade vers un humain si besoin"] }
+    ];
+    const agents = agentsData.map((a, i) => {
+      const open = i === S.agent;
+      return { ...a, open,
+        onClick: () => this.setState({ agent: i }),
+        cardStyle: { borderRadius: "20px", padding: open ? "30px 34px" : "22px 30px", background: open ? "rgba(139,92,246,0.055)" : "rgba(255,255,255,0.02)", border: open ? "1px solid rgba(167,139,250,0.45)" : "1px solid rgba(255,255,255,0.09)", cursor: open ? "default" : "pointer", transition: "all .25s ease" },
+        avStyle: { width: open ? "74px" : "54px", height: open ? "74px" : "54px", borderRadius: "50%", overflow: "hidden", flexShrink: 0, border: "1px solid rgba(255,255,255,0.12)", background: "#181835", transition: "all .25s ease" } };
+    });
+    const press = [1, 2, 3, 4, 5].map((n) => ({ id: n, ph: "logo média " + n }));
+    const tests = [
+      { t: "On ne rate plus un seul appel", q: "Même quand l'équipe est en rendez-vous, chaque appel est pris en charge et les rendez-vous se calent tout seuls. Simple et redoutablement efficace.", a: "Claire M.", r: "Directrice d'une agence immobilière" },
+      { t: "Mise en place ultra simple", q: "Là où d'autres outils vous noient dans des intégrations complexes, ici tout était opérationnel en une après-midi. Le résultat est bluffant.", a: "Sarah B.", r: "Fondatrice d'une marque de cosmétiques" },
+      { t: "Un standard dispo 24h/24", q: "Nos clients appellent le soir et le week-end. Maintenant, quelqu'un répond toujours, et je reçois un résumé écrit de chaque appel.", a: "Mehdi T.", r: "Gérant d'une société de dépannage" },
+      { t: "Mon agenda se remplit tout seul", q: "Je lui donne mes créneaux, il gère les prises de rendez-vous et les relances. Mon planning est plein deux semaines à l'avance.", a: "Irène R.", r: "Ostéopathe" },
+      { t: "SAV très réactif", q: "J'ai été onboardée par l'équipe en visio, tout était clair en 30 minutes. Et derrière, le support répond vite, vraiment.", a: "Lili R.", r: "Dirigeante d'une PME" },
+      { t: "Le meilleur investissement de l'année", q: "On a récupéré l'équivalent d'un mi-temps. Les appels qualifiés arrivent directement dans notre CRM, prêts à être traités.", a: "François T.", r: "Dirigeant d'une TPE" },
+      { t: "C'est pro, rapide", q: "La voix est naturelle, les réponses sont justes, et mes clients ne font pas la différence. J'ai hâte de voir les prochaines évolutions.", a: "Alexis C.", r: "Dirigeant d'une TPE" },
+      { t: "Je le recommande", q: "J'utilise le service depuis janvier. Les mises à jour s'enchaînent et c'est de plus en plus intuitif. L'onboarding était impeccable.", a: "Lauren A.", r: "Gérante d'un salon de coiffure" }
+    ];
+    const rev = [...tests].reverse();
+    const faqsData = [
+      { q: "La démo est vraiment gratuite ?", a: "Oui, 100% gratuite et sans engagement. Aucune carte bancaire demandée." },
+      { q: "Ça dure combien de temps ?", a: "30 minutes en visio, adaptées à votre secteur et à vos besoins réels." },
+      { q: "C'est adapté à ma taille d'entreprise ?", a: "Indépendants, PME, grands groupes : nos agents s'adaptent à votre volume d'appels et à votre contexte." },
+      { q: "Faut-il s'y connaître en IA ?", a: "Non. Notre équipe installe tout avec vous et reste disponible après le lancement." },
+      { q: "En combien de temps je peux démarrer ?", a: "La plupart de nos clients sont opérationnels sous 48h après la démo." }
+    ];
+    const faqs = faqsData.map((f, i) => {
+      const open = i === S.faq;
+      return { ...f, open, icon: open ? "×" : "+",
+        onToggle: () => this.setState({ faq: open ? -1 : i }),
+        wrapStyle: { borderTop: i ? "1px solid rgba(255,255,255,0.07)" : "none" } };
+    });
+    const mens = S.billing === "mensuel";
+    const btnBase = { display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", borderRadius: "999px", fontSize: "15.5px", fontWeight: 600, color: "#f5f4fb", cursor: "pointer", transition: "all .2s ease" };
+    return {
+      agents, pressLoop: [...press, ...press],
+      rowA: [...tests, ...tests], rowB: [...rev, ...rev],
+      faqs,
+      setAnnuel: () => this.setState({ billing: "annuel" }),
+      setMensuel: () => this.setState({ billing: "mensuel" }),
+      annBtn: { ...btnBase, background: mens ? "transparent" : "rgba(255,255,255,0.1)", border: mens ? "1px solid transparent" : "1px solid rgba(255,255,255,0.14)" },
+      mensBtn: { ...btnBase, background: mens ? "rgba(255,255,255,0.1)" : "transparent", border: mens ? "1px solid rgba(255,255,255,0.14)" : "1px solid transparent" },
+      priceEss: mens ? "79€" : "59€",
+      pricePro: mens ? "149€" : "112€",
+      stat1: S.c1.toLocaleString("fr-FR") + "+",
+      stat2: S.c2 + "h",
+      stat3: S.c3 + " min",
+      statsRef: (el) => { this._stats = el; },
+      showCollab: this.props.showCollab ?? true,
+      showPromos: this.props.showPromos ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

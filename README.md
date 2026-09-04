@@ -1,41 +1,46 @@
 # Landing — VocalFlow
 
-Site statique (HTML / CSS / JS vanilla, **zéro build**) destiné à implémenter la maquette Claude Design
-`design-source/Landing VocalFlow.dc.html`. Prêt pour GitHub + Vercel.
-
-> **État actuel : socle prêt, landing en attente de la maquette.**
-> La maquette n'a pas pu être importée depuis Claude Design (autorisation absente dans la session).
-> Voir [`design-source/README.md`](design-source/README.md) pour la récupérer. En attendant, `index.html`
-> est une page d'accueil provisoire (`noindex`) reprenant logo, promesse et lien de réservation.
+Site statique (HTML / CSS / JS vanilla, **zéro build**) implémentant la maquette Claude Design
+`design-source/reproduction-design-agentia/project/Landing VocalFlow.dc.html`. Prêt pour GitHub + Vercel.
 
 ## Fichiers
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | Page d'accueil — **provisoire**, à remplacer par l'implémentation de la maquette |
-| `styles.css` | Jetons de couleur (variables CSS), boutons, nav, pied de page, pages légales, 404. Les jetons de `:root` seront alignés sur la maquette |
-| `main.js` | Lien Calendly centralisé (`CALENDLY_URL`) ; accueillera les comportements de la landing (FAQ, animations…) |
-| `mentions-legales.html` | Mentions légales (obligatoires en France) — identité de l'éditeur reprise de l'ancienne landing |
-| `politique-confidentialite.html` | Politique de confidentialité (RGPD) — reprise de l'ancienne landing |
+| `index.html` | La landing (12 sections : hero, chiffres, problème, démo en direct, infrastructure, chemin, offre, marque blanche, qui je suis, FAQ, CTA final, pied de page) |
+| `styles.css` | Styles : jetons de couleur dans `:root`, `@font-face` Inter, animations, responsive, `prefers-reduced-motion`, pages légales et 404 |
+| `main.js` | Veil d'ouverture, halo qui suit la souris, compteurs animés, widget de démo, accordéon FAQ, lien Calendly centralisé |
+| `mentions-legales.html` | Mentions légales (obligatoires en France) |
+| `politique-confidentialite.html` | Politique de confidentialité (RGPD) |
 | `404.html` | Page introuvable (Vercel la sert automatiquement) |
-| `assets/vocalflow-logo.png` / `.webp` | Logo (1600 px, fond transparent) — chemin référencé par la maquette |
-| `assets/vocalflow-logo-480.*` | Logo réduit pour la nav et le pied de page |
-| `assets/og.jpg` | Aperçu 1200×630 pour LinkedIn / WhatsApp (logo sur fond bleu nuit) |
+| `assets/fonts/inter.woff2` | Inter variable (400–800, sous-ensemble latin) auto-hébergée, licence OFL jointe |
+| `assets/vocalflow-logo*.png/webp` | Logo (1600 px et 480 px, fond transparent) |
+| `assets/portrait*.webp/jpg` | Photo de Yassir (extraite de la maquette), 650 px et 720 px |
+| `assets/og.jpg` | Aperçu 1200×630 pour LinkedIn / WhatsApp |
 | `assets/icons/`, `favicon.ico`, `site.webmanifest` | Favicon multi-tailles, icônes 192/512, apple-touch-icon |
-| `vercel.json` | `cleanUrls`, en-têtes de sécurité (CSP, HSTS, nosniff…), cache des assets |
+| `vercel.json` | `cleanUrls`, en-têtes de sécurité (CSP, HSTS, Permissions-Policy…), cache des assets |
 | `.vercelignore` | Exclut du déploiement `design-source/`, ce README et les fichiers Git |
 | `robots.txt`, `sitemap.xml` | Indexation (domaine `vocal-flow.fr`, voir « Domaine ») |
-| `design-source/` | Maquette d'origine + runtime `support.js` — référence, non déployée |
+| `design-source/` | Bundle Claude Design d'origine — référence, non déployée (voir son README) |
 
-Tous les chemins sont absolus (`/styles.css`, `/assets/…`) : les pages fonctionnent aussi bien à la racine
-qu'en URL propre (`/mentions-legales`).
+Tous les chemins sont absolus (`/styles.css`, `/assets/…`) : les pages fonctionnent à la racine comme en URL propre.
+
+## Prévisualiser en local
+
+Les chemins étant absolus, ouvrir `index.html` en double-clic ne charge pas les styles : il faut un petit serveur HTTP à la racine.
+
+```bash
+npx --yes serve .            # http://localhost:3000 — gère aussi les URL propres (/mentions-legales)
+# ou
+python -m http.server 8000   # http://localhost:8000 — utiliser /mentions-legales.html
+```
 
 ## Mettre en ligne (GitHub → Vercel)
 
 > ⚠️ Ce dossier est dans OneDrive. Git + OneDrive cohabitent mal (fichiers verrouillés, conflits de synchro sur `.git`).
 > Recommandé : copier le projet **hors** de OneDrive avant de travailler avec Git, ou exclure le dossier de la synchro.
 
-Le dépôt Git est déjà initialisé (branche `main`, premier commit fait). Il reste à créer le dépôt distant :
+Le dépôt Git est déjà initialisé (branche `main`). Il reste à créer le dépôt distant :
 
 ```bash
 # Option A — avec le CLI GitHub (à installer : https://cli.github.com)
@@ -56,21 +61,8 @@ Après le premier déploiement, vérifier (Git Bash) :
 
 ```bash
 curl -sI https://<domaine>/ | grep -i content-security-policy        # attendu : la CSP de vercel.json
-curl -sI https://<domaine>/assets/og.jpg | grep -i cache-control      # attendu : max-age=2592000
+curl -sI https://<domaine>/assets/fonts/inter.woff2 | grep -i cache   # attendu : max-age=31536000, immutable
 curl -sI https://<domaine>/mentions-legales | head -1                 # attendu : HTTP/2 200 (cleanUrls)
-```
-
-## Prévisualiser en local
-
-Les chemins étant absolus (`/styles.css`), ouvrir `index.html` en double-clic ne charge pas les styles :
-il faut un petit serveur HTTP à la racine du projet.
-
-```bash
-# Node (déjà installé)
-npx --yes serve .            # http://localhost:3000 — gère aussi les URL propres (/mentions-legales)
-
-# ou Python
-python -m http.server 8000   # http://localhost:8000 — utiliser /mentions-legales.html
 ```
 
 ## Domaine
@@ -95,22 +87,20 @@ Pour rediriger l'URL `*.vercel.app` vers le domaine, ajouter dans `vercel.json` 
 
 ## À personnaliser
 
-- **Lien de réservation** : `CALENDLY_URL` dans `main.js` (`https://calendly.com/contact-vocal-flow/audit-ia-vocale`, repris de l'ancienne landing). Les `<a data-calendly>` ont aussi l'URL en dur, pour fonctionner sans JS.
-- **Numéro de démonstration** : `+33 1 89 31 60 89` (repris de l'ancienne landing) dans `index.html`.
+- **Lien de réservation** : `CALENDLY_URL` dans `main.js` (`https://calendly.com/contact-vocal-flow/audit-ia-vocale`). Dans la maquette, les boutons « Réserver mon diagnostic » de la nav, du hero et de l'offre mènent à la section finale `#diagnostic` ; seul le bouton de cette section ouvre Calendly (nouvel onglet). Le `<a data-calendly>` a aussi l'URL en dur, pour fonctionner sans JS.
+- **Widget de démo** (section « La preuve, en direct ») : iframe `app.vocal-flow.fr/agent-test-public?token=…&agentId=…`, chargée uniquement au clic sur « Tester l'IA en direct ». Le cadre ne montre que le bouton d'appel : hauteurs dans `styles.css` (`--widget-window: 89px`, `--widget-offset: 409px`, `--widget-height: 630px`, valeurs de la maquette). Si l'interface du widget change, ajuster `--widget-offset`. `WIDGET_AUTO_EXPAND` (`main.js`) agrandit le cadre au démarrage de l'appel (désactivé, comme la maquette).
+- **Bouton « Devenir partenaire »** (marque blanche) : la maquette n'avait pas de cible ; il ouvre un e-mail vers `contact@vocal-flow.fr` avec l'objet pré-rempli (`data-partner` dans `index.html`).
+- **Compteurs** : `data-count` / `data-prefix` / `data-suffix` sur les `.stat__num` d'`index.html` (100 000 appels, 75 %).
+- **Photo** : `assets/portrait*.webp/jpg`. Pour la remplacer : mêmes noms de fichiers ou renommer et mettre à jour le `<picture>` (les assets sont mis en cache 30 jours).
+- **Durée de l'intro** : veil `1.85s` (`.veil`), nav à `1.55s`, hero de `0.88s` à `1.36s` (`.rise` dans `styles.css`). Mouvement réduit activé sur le système : pas de veil ni de halo, entrées en fondu seul.
 - **Identité légale** (SIRET, adresse, TVA) : `mentions-legales.html` et `politique-confidentialite.html`.
-- **Remplacer une image** (`assets/`) : renommer le fichier (les assets sont mis en cache 30 jours, les polices 1 an).
 
 ## Sécurité / vie privée
 
-- La CSP de `vercel.json` n'autorise que le site lui-même + les iframes Calendly. **Tout nouveau script, police
-  ou iframe externe** (Google Fonts, vidéo Gumlet/YouTube, webhook n8n, chat…) doit y être ajouté, sinon il sera bloqué
-  silencieusement. Préférer les polices auto-hébergées dans `assets/fonts/` (RGPD, pas d'appel à Google).
-- Vercel Web Analytics (sans cookie) est compatible avec la CSP actuelle (`script-src 'self'` / `connect-src 'self'`) ;
-  la politique de confidentialité le mentionne déjà.
-- Les iframes Calendly posent leurs propres cookies : mentionné dans la politique de confidentialité.
-
-## Prochaine étape
-
-1. Récupérer `Landing VocalFlow.dc.html` (+ `image-slot.js`) dans `design-source/` — voir `design-source/README.md`.
-2. Implémenter la maquette dans `index.html` / `styles.css` / `main.js`, retirer la balise `noindex` d'`index.html`,
-   aligner les jetons de `:root`, ajouter les polices dans `assets/fonts/` et compléter la CSP si besoin.
+- La CSP de `vercel.json` n'autorise que le site lui-même + les iframes `app.vocal-flow.fr` (widget de démo) et `calendly.com`.
+  **Tout nouveau script, police ou iframe externe** (analytics, vidéo, chat…) doit y être ajouté, sinon il sera bloqué silencieusement.
+  Pas de style inline dans le HTML (`style-src 'self'`) : les styles dynamiques passent par des classes ou `element.style` en JS.
+- `Permissions-Policy` refuse caméra, géolocalisation, paiement et USB ; le micro est délégué uniquement à `app.vocal-flow.fr` (nécessaire pour parler à l'agent).
+- Inter est servie depuis le site (plus d'appel à Google Fonts → RGPD).
+- Le widget de démo et l'iframe Calendly posent leurs propres cookies : mentionné dans la politique de confidentialité.
+- Vercel Web Analytics (sans cookie) est compatible avec la CSP actuelle ; la politique de confidentialité le mentionne déjà.
