@@ -40,18 +40,15 @@ python -m http.server 8000   # http://localhost:8000 — utiliser /mentions-lega
 > ⚠️ Ce dossier est dans OneDrive. Git + OneDrive cohabitent mal (fichiers verrouillés, conflits de synchro sur `.git`).
 > Recommandé : copier le projet **hors** de OneDrive avant de travailler avec Git, ou exclure le dossier de la synchro.
 
-Le dépôt Git est déjà initialisé (branche `main`). Il reste à créer le dépôt distant :
+Dépôt GitHub : **https://github.com/Yassir-IA/Landing_vocalflow** (branche `main`, remote `origin`).
 
 ```bash
-# Option A — avec le CLI GitHub (à installer : https://cli.github.com)
-gh repo create vocalflow-landing --private --source=. --push
-
-# Option B — sans CLI : créer un dépôt vide sur github.com, puis
-git remote add origin https://github.com/<compte>/vocalflow-landing.git
-git push -u origin main
+git add -A
+git commit -m "Description du changement"
+git push
 ```
 
-Puis sur [vercel.com](https://vercel.com) → **Add New… → Project** → importer le dépôt GitHub.
+Sur [vercel.com](https://vercel.com) → **Add New… → Project** → importer le dépôt `Yassir-IA/Landing_vocalflow`.
 Framework Preset : **Other**, aucune commande de build, Output Directory vide (racine). Déployer.
 Chaque `git push` sur `main` redéploie automatiquement ; chaque branche/PR a son URL de prévisualisation.
 
