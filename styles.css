@@ -54,10 +54,12 @@
   --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --ease: cubic-bezier(.22, 1, .36, 1);
 
-  /* Widget de démo (S4) : cadrage du bouton d'appel dans l'iframe app.vocal-flow.fr.
-     Valeurs de la maquette : fenêtre 89 px, décalage 409 px, hauteur totale 630 px. */
-  --widget-window: 89px;
-  --widget-offset: 409px;
+  /* Widget de démo (S4) : cadrage du bouton « Appeler l'agent » dans l'iframe app.vocal-flow.fr.
+     Maquette : fenêtre 89 px, décalage 409 px. Remesuré en ligne le 05/09/2026 : l'app affiche un sélecteur
+     de micro au-dessus du bouton (bouton à 475-523 px), d'où décalage 465 px et fenêtre 70 px.
+     Si le bouton est coupé : augmenter --widget-window ; s'il est trop bas/haut : ajuster --widget-offset. */
+  --widget-window: 70px;
+  --widget-offset: 465px;
   --widget-height: 630px;
 
   color-scheme: dark;
