@@ -1,0 +1,17 @@
+# Dépendances / outils locaux
+node_modules/
+.vercel/
+.env
+.env.*
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Fichiers temporaires OneDrive / éditeurs
+~$*
+*.tmp
+.vscode/
+.idea/
