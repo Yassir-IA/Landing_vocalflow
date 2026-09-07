@@ -117,6 +117,21 @@
     }
   }
 
+  /* ---- Liens « Testez l'IA en direct » (bas de page) : on centre le bloc démo du hero dans l'écran,
+     au lieu de le coller sous la nav (scroll-padding-top). ---- */
+  var demoBlock = qs('#demo-live');
+  if (demoBlock) {
+    qsa('a[href="#demo-live"]').forEach(function (a) {
+      a.addEventListener('click', function (event) {
+        event.preventDefault();
+        var smooth = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+        demoBlock.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'center' });
+        if (history.replaceState) history.replaceState(null, '', '#demo-live');
+        if (revealBtn && !demoIdle.hidden) revealBtn.focus({ preventScroll: true });
+      });
+    });
+  }
+
   /* ---- FAQ (S11) : accordéon, un seul ouvert, aucun par défaut ; icône + / × ---- */
   var faqItems = qsa('.faq__item');
   var faqOpen = -1;
