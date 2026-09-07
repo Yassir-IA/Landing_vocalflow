@@ -59,8 +59,8 @@
      l'agent » (≈ 475-523 px), et le bouton remonte un peu pendant l'appel : on garde le haut de cadre de la
      maquette et on agrandit la fenêtre pour montrer sélecteur + bouton + marge.
      Bouton coupé en bas : augmenter --widget-window ; contenu trop bas/haut : ajuster --widget-offset. */
-  --widget-window: 130px;
-  --widget-offset: 409px;
+  --widget-window: 168px;
+  --widget-offset: 400px;
   --widget-height: 630px;
 
   color-scheme: dark;
@@ -249,7 +249,7 @@ ul, ol { padding: 0; list-style: none; }
 .hero__demo .demo__idle { flex-direction: column; align-items: center; gap: 14px; }
 .hero__demo .demo__live { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .hero__demo .demo__sub { margin: 0; }
-.hero__demo .widget { margin: 8px auto 0; width: 100%; }
+.hero__demo .widget { margin: 10px auto 0; width: 100%; max-width: 480px; } /* largeur de la carte de l'app : plus de bandes latérales */
 .hero__demo .demo__note { margin: 6px auto 0; }
 
 /* Entrées en cascade (délais de la maquette) */
@@ -293,7 +293,7 @@ ul, ol { padding: 0; list-style: none; }
 .demo__sub { margin-top: 14px; font-size: 16.5px; color: var(--soft); }
 .widget { max-width: 640px; margin: 26px auto 0; animation: riseIn .7s var(--ease) both; }
 .widget__frame {
-  position: relative; height: var(--widget-window); border-radius: 14px; overflow: hidden;
+  position: relative; height: var(--widget-window); border-radius: 16px; overflow: hidden;
   border: 1px solid rgba(167, 139, 250, .3); background: var(--bg-2);
   box-shadow: 0 18px 60px -30px rgba(124, 92, 246, .55);
   transition: height .5s var(--ease), border-radius .5s ease;
