@@ -100,6 +100,11 @@ Vérifiés par une revue croisée (fidélité, JS, responsive, accessibilité, s
 
 - **Démo dans le hero** (demande du 07/09/2026) : la section « 02 · La preuve, en direct » de la maquette a été retirée et son
   widget placé dans le hero, à la place du CTA « Réserver mon diagnostic » et de sa légende. Les sections suivantes sont renumérotées.
+- **Offre réécrite** (demande du 07/09/2026, « l'offre n'est pas claire ») : « Une seule offre, en deux temps » au lieu de « Deux façons de
+  travailler ensemble », résultat concret en tête de chaque carte, kickers « Forfait unique » / « Abonnement mensuel », notes
+  expliquant ce que le forfait ne couvre pas et pourquoi les places sont limitées, encart « Ce que vous payez, et quand » sans chiffres.
+  Hypothèses commerciales à confirmer : mise en service = forfait payé une fois ; abonnement = agent + appels selon le volume + suivi
+  hebdomadaire ; l'agent répond sur la ligne existante du client.
 - **Section « Qui je suis » retirée** (demande du 07/09/2026) ; la FAQ, retitrée « Les questions qu'on me pose souvent. », devient la section 05.
 - **Responsive** : la maquette est desktop uniquement ; en dessous de 1200 px les grilles se replient, les titres sont équilibrés
   (`text-wrap: balance`), la nav devient compacte, et sous 480 px le widget de démo est affiché en entier (son recadrage n'est fiable

@@ -165,7 +165,7 @@ ul, ol { padding: 0; list-style: none; }
 
 .cta-row { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
 .cta-block { display: flex; flex-direction: column; align-items: center; gap: 13px; margin-top: 30px; }
-.cta-block__note { font-size: 14px; color: var(--muted-2); }
+.cta-block__note { font-size: 14px; color: var(--muted-2); text-align: center; }
 
 /* ---------- Animations ---------- */
 @keyframes pulseDot { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(109, 155, 255, .55); } 50% { opacity: .75; box-shadow: 0 0 0 6px rgba(109, 155, 255, 0); } }
@@ -348,7 +348,17 @@ ul, ol { padding: 0; list-style: none; }
 .plan__name { margin-top: 12px; font-size: 26px; font-weight: 800; color: var(--ink); }
 .plan__desc { margin-top: 12px; font-size: 15.5px; line-height: 1.65; color: var(--muted); }
 .plan .checklist { margin-top: 24px; }
-.offer__note { max-width: 620px; margin: 30px auto 0; text-align: center; font-size: 15px; line-height: 1.65; color: var(--muted-2); }
+.lead--offer { max-width: 720px; }
+.plan__note { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line-soft); font-size: 13.5px; line-height: 1.6; color: var(--muted-2); }
+.plan--featured .plan__note { color: var(--soft); border-top-color: rgba(167, 139, 250, .25); }
+.offer__pricing {
+  max-width: 1020px; margin: 22px auto 0; padding: 26px 34px 28px;
+  background: var(--card); border: 1px solid rgba(167, 139, 250, .28); border-radius: 20px;
+}
+.offer__pricing-title { font-size: 12.5px; letter-spacing: .28em; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+.offer__pricing-grid { margin: 16px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 32px; }
+.offer__pricing-grid dt { font-size: 15.5px; font-weight: 700; color: var(--ink); }
+.offer__pricing-grid dd { margin: 6px 0 0; font-size: 14.5px; line-height: 1.65; color: var(--muted); }
 
 /* ---------- S9 Marque blanche ---------- */
 .partner { padding: 90px 24px 40px; }
@@ -452,6 +462,7 @@ ul, ol { padding: 0; list-style: none; }
   .nav { padding: 0 20px; height: 64px; }
   .footer__inner { padding: 22px 20px; }
   .plans { grid-template-columns: 1fr; }
+  .offer__pricing-grid { grid-template-columns: 1fr; }
   .simple { padding-top: 112px; }
 }
 
@@ -470,6 +481,7 @@ ul, ol { padding: 0; list-style: none; }
   .quotes { margin-top: 40px; }
   .law { margin-top: 36px; padding: 26px 22px; }
   .plan { padding: 28px 24px; }
+  .offer__pricing { padding: 22px 22px 24px; }
   .partner__card { padding: 28px 24px; gap: 24px; }
   .faq__q { padding: 18px 20px; }
   .faq__q > span:first-child { font-size: 16px; }
