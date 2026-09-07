@@ -168,7 +168,7 @@ ul, ol { padding: 0; list-style: none; }
 .cta-block__note { font-size: 14px; color: var(--muted-2); }
 
 /* ---------- Animations ---------- */
-@keyframes pulseDot { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52, 211, 153, .55); } 50% { opacity: .75; box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); } }
+@keyframes pulseDot { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(109, 155, 255, .55); } 50% { opacity: .75; box-shadow: 0 0 0 6px rgba(109, 155, 255, 0); } }
 @keyframes riseIn { from { opacity: 0; transform: translateY(26px); filter: blur(10px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
 @keyframes fadeNav { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes markIn { from { opacity: 0; transform: scale(.82) translateY(8px); filter: blur(12px); } to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); } }
@@ -289,7 +289,7 @@ ul, ol { padding: 0; list-style: none; }
 .demo__idle[hidden], .demo__live[hidden] { display: none; }
 .demo__live:focus { outline: none; }
 .status { display: flex; align-items: center; justify-content: center; gap: 12px; }
-.status__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); animation: pulseDot 2s ease infinite; }
+.status__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--blue); animation: pulseDot 2s ease infinite; }
 .status__text { font-size: 13px; letter-spacing: .2em; font-weight: 700; color: var(--muted-2); }
 .demo__sub { margin-top: 14px; font-size: 16.5px; color: var(--soft); }
 .widget { max-width: 640px; margin: 26px auto 0; animation: riseIn .7s var(--ease) both; }
