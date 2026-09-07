@@ -247,7 +247,6 @@ ul, ol { padding: 0; list-style: none; }
 .hero__lead { margin: 26px auto 0; max-width: 620px; font-size: clamp(17px, 2vw, 18.5px); line-height: 1.7; color: var(--body); }
 .hero__demo { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 38px; width: 100%; }
 .hero__demo .demo__idle { flex-direction: column; align-items: center; gap: 14px; }
-.hero__hint { max-width: 560px; margin: 0; font-size: 14px; line-height: 1.6; color: var(--muted-2); }
 .hero__demo .demo__live { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .hero__demo .demo__sub { margin: 0; }
 .hero__demo .widget { margin: 8px auto 0; width: 100%; }
