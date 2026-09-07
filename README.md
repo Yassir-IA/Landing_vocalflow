@@ -7,7 +7,7 @@ Site statique (HTML / CSS / JS vanilla, **zéro build**) implémentant la maquet
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | La landing (11 sections : hero avec démo en direct, chiffres, problème, infrastructure, chemin, offre, marque blanche, qui je suis, FAQ, CTA final, pied de page) |
+| `index.html` | La landing (10 sections : hero avec démo en direct, chiffres, problème, infrastructure, chemin, offre, marque blanche, FAQ, CTA final, pied de page) |
 | `styles.css` | Styles : jetons de couleur dans `:root`, `@font-face` Inter, animations, responsive, `prefers-reduced-motion`, pages légales et 404 |
 | `main.js` | Veil d'ouverture, halo qui suit la souris, compteurs animés, widget de démo, accordéon FAQ, lien Calendly centralisé |
 | `mentions-legales.html` | Mentions légales (obligatoires en France) |
@@ -15,7 +15,6 @@ Site statique (HTML / CSS / JS vanilla, **zéro build**) implémentant la maquet
 | `404.html` | Page introuvable (Vercel la sert automatiquement) |
 | `assets/fonts/inter.woff2` | Inter variable (400–800, sous-ensemble latin) auto-hébergée, licence OFL jointe |
 | `assets/vocalflow-logo*.png/webp` | Logo recadré au pixel près : 240 px (nav, veil, pied de page, en WebP + PNG) et 1600 px (JSON-LD, génération des icônes) |
-| `assets/portrait*.webp/jpg` | Photo de Yassir (extraite de la maquette), 410 / 650 / 720 px |
 | `assets/og.jpg` | Aperçu 1200×630 pour LinkedIn / WhatsApp |
 | `assets/icons/`, `favicon.ico`, `site.webmanifest` | Favicon multi-tailles, icônes 192/512, apple-touch-icon |
 | `vercel.json` | `cleanUrls`, en-têtes de sécurité (CSP, HSTS, Permissions-Policy…), cache des assets |
@@ -88,7 +87,6 @@ Pour rediriger l'URL `*.vercel.app` vers le domaine, ajouter dans `vercel.json` 
 - **Widget de démo** (dans le hero, bouton « Tester l'IA en direct ») : iframe `app.vocal-flow.fr/agent-test-public?token=…&agentId=…`, chargée uniquement au clic sur « Tester l'IA en direct ». Le cadre montre le sélecteur de micro et le bouton « Appeler l'agent » : variables dans `styles.css` (`--widget-offset: 409px`, `--widget-window: 130px`, `--widget-height: 630px`). La maquette prévoyait une fenêtre de 89 px (bouton seul), mais l'application affiche un sélecteur de micro au-dessus du bouton et le bouton remonte légèrement pendant l'appel, d'où une fenêtre plus haute. Si l'interface du widget change encore : `--widget-offset` déplace le contenu, `--widget-window` règle la hauteur visible. `WIDGET_AUTO_EXPAND` (`main.js`) agrandit le cadre au démarrage de l'appel (désactivé, comme la maquette).
 - **Bouton « Devenir partenaire »** (marque blanche) : la maquette n'avait pas de cible ; il ouvre un e-mail vers `contact@vocal-flow.fr` avec l'objet pré-rempli (`data-partner` dans `index.html`).
 - **Compteurs** : `data-count` / `data-prefix` / `data-suffix` sur les `.stat__num` d'`index.html` (100 000 appels, 75 %).
-- **Photo** : `assets/portrait*.webp/jpg`. Pour la remplacer : mêmes noms de fichiers ou renommer et mettre à jour le `<picture>` (les assets sont mis en cache 30 jours).
 - **Durée de l'intro** : veil `1.85s` (`.veil`), nav à `1.55s`, hero de `0.88s` à `1.36s` (`.rise` dans `styles.css`). Mouvement réduit demandé par le système (Windows « Effets d'animation » désactivé, macOS « Réduire les animations ») :
   l'intro, l'onde et le halo restent, mais en fondus seuls, sans déplacement, zoom ni flou. Pour voir la version complète sur son
   propre PC : Paramètres Windows → Accessibilité → Effets visuels → Effets d'animation.
@@ -102,6 +100,7 @@ Vérifiés par une revue croisée (fidélité, JS, responsive, accessibilité, s
 
 - **Démo dans le hero** (demande du 07/09/2026) : la section « 02 · La preuve, en direct » de la maquette a été retirée et son
   widget placé dans le hero, à la place du CTA « Réserver mon diagnostic » et de sa légende. Les sections suivantes sont renumérotées.
+- **Section « Qui je suis » retirée** (demande du 07/09/2026) ; la FAQ, retitrée « Les questions qu'on me pose souvent. », devient la section 05.
 - **Responsive** : la maquette est desktop uniquement ; en dessous de 1200 px les grilles se replient, les titres sont équilibrés
   (`text-wrap: balance`), la nav devient compacte, et sous 480 px le widget de démo est affiché en entier (son recadrage n'est fiable
   qu'à partir de 360 px de large).

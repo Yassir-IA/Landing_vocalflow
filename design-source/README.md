@@ -35,7 +35,7 @@ Le `.dc.html` charge `./support.js` et `./image-slot.js` ; ils doivent être ser
 | Styles inline + `style-hover` | Classes dans `styles.css` (jetons dans `:root`) |
 | Script `DCLogic` (veil, halo, compteurs, démo, FAQ) | `main.js` |
 | Props `widgetOffset` / `widgetWindow` / `widgetHeight` / `widgetAutoExpand` | `--widget-offset` / `--widget-window` / `--widget-height` dans `styles.css`, `WIDGET_AUTO_EXPAND` dans `main.js` |
-| `<image-slot id="photo-yassir">` | `<picture>` → `assets/portrait*.webp/jpg` |
+| `<image-slot id="photo-yassir">` (S10 « Qui je suis ») | Section retirée le 07/09/2026 (photo non utilisée) |
 | Liens `#top` du pied de page (placeholders) | `/mentions-legales`, `/politique-confidentialite` |
 | Bouton « Devenir partenaire » (`#top`, placeholder) | `mailto:contact@vocal-flow.fr` (à remplacer par un formulaire ou une page si besoin) |
 | CTA final « Réserver mon diagnostic » (`#diagnostic`, placeholder) | Lien Calendly (`CALENDLY_URL` dans `main.js`) |
