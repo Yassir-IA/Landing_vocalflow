@@ -82,12 +82,23 @@
           </div>
           <h1 id="hero-title" class="hero__title rise">Ne manquez plus jamais <span class="grad-text">un seul appel.</span></h1>
           <p class="hero__lead rise">VocalFlow décroche en une seconde, jour et nuit, et transforme l'appel en rendez-vous dans votre agenda.</p>
-          <div class="hero__cta rise">
-            <div class="cta-row">
-              <a href="#diagnostic" class="btn btn--primary">Réserver mon diagnostic (30&nbsp;min) <span class="arrow" aria-hidden="true">→</span></a>
-              <a href="#demo-live" class="btn btn--ghost">Tester l'IA en direct</a>
+          <div id="demo-live" class="hero__demo rise">
+            <div class="status"><span class="status__dot" aria-hidden="true"></span><span class="status__text">EN LIGNE MAINTENANT</span></div>
+            <div class="demo__idle">
+              <button type="button" class="btn btn--primary demo__reveal">Tester l'IA en direct</button>
+              <p class="hero__hint">Notre IA de démonstration est en ligne, en ce moment même. Coupez-lui la parole, changez de sujet, parlez vite, posez des questions pièges : elle suit, sans jamais perdre le fil.</p>
             </div>
-            <div class="hero__note">Gratuit. Vous repartez avec votre plan d'action, qu'on travaille ensemble ou non.</div>
+            <div class="demo__live" hidden tabindex="-1">
+              <div class="demo__sub">Notre agent décroche dans la seconde, 24h/24.</div>
+              <div class="widget">
+                <div class="widget__frame">
+                  <div class="widget__loading" aria-hidden="true">CONNEXION À L'AGENT…</div>
+                  <iframe title="Tester l'agent VocalFlow en direct" data-src="https://app.vocal-flow.fr/agent-test-public?token=dpl_apt_5d28abdd1e798d0c195125b5055f5cab32efa5df6ee1982fee06af8acb499785&amp;agentId=01M1MCRBT5XDGEQPH5RAGVAJAZ" allow="microphone; autoplay" scrolling="no"></iframe>
+                </div>
+              </div>
+              <p class="demo__note">L'agent de démonstration suit un script générique. Le vôtre sera configuré sur votre métier, vos offres et vos règles.</p>
+            </div>
+            <noscript><p class="demo__note"><a href="https://app.vocal-flow.fr/agent-test-public?token=dpl_apt_5d28abdd1e798d0c195125b5055f5cab32efa5df6ee1982fee06af8acb499785&amp;agentId=01M1MCRBT5XDGEQPH5RAGVAJAZ" target="_blank" rel="noopener">Ouvrir la démo dans un nouvel onglet</a></p></noscript>
           </div>
         </div>
       </section>
@@ -127,33 +138,9 @@
         </div>
       </section>
 
-      <!-- S4 Démo en direct -->
-      <section id="demo-live" class="demo" aria-labelledby="demo-title">
-        <p class="eyebrow">02 · La preuve, en direct</p>
-        <h2 id="demo-title" class="h2">Ne me croyez pas sur parole. <span class="accent">Appelez-la.</span></h2>
-        <p class="lead">Notre IA de démonstration est en ligne, en ce moment même. Coupez-lui la parole, changez de sujet, parlez vite, posez des questions pièges : elle suit, sans jamais perdre le fil.</p>
-        <div class="demo__card">
-          <div class="demo__idle">
-            <button type="button" class="btn btn--accent demo__reveal">Tester l'IA en direct</button>
-          </div>
-          <div class="demo__live" hidden tabindex="-1">
-            <div class="status" role="status"><span class="status__dot" aria-hidden="true"></span><span class="status__text">EN LIGNE MAINTENANT</span></div>
-            <div class="demo__sub">Notre agent décroche dans la seconde, 24h/24.</div>
-            <div class="widget">
-              <div class="widget__frame">
-                <div class="widget__loading" aria-hidden="true">CONNEXION À L'AGENT…</div>
-                <iframe title="Tester l'agent VocalFlow en direct" data-src="https://app.vocal-flow.fr/agent-test-public?token=dpl_apt_5d28abdd1e798d0c195125b5055f5cab32efa5df6ee1982fee06af8acb499785&amp;agentId=01M1MCRBT5XDGEQPH5RAGVAJAZ" allow="microphone; autoplay" scrolling="no"></iframe>
-              </div>
-            </div>
-            <p class="demo__note">L'agent de démonstration suit un script générique. Le vôtre sera configuré sur votre métier, vos offres et vos règles.</p>
-          </div>
-          <noscript><p class="demo__note"><a href="https://app.vocal-flow.fr/agent-test-public?token=dpl_apt_5d28abdd1e798d0c195125b5055f5cab32efa5df6ee1982fee06af8acb499785&amp;agentId=01M1MCRBT5XDGEQPH5RAGVAJAZ" target="_blank" rel="noopener">Ouvrir la démo dans un nouvel onglet</a></p></noscript>
-        </div>
-      </section>
-
       <!-- S5 Infrastructure -->
       <section class="infra" aria-labelledby="infra-title">
-        <p class="eyebrow">03 · Au-delà du décroché</p>
+        <p class="eyebrow">02 · Au-delà du décroché</p>
         <h2 id="infra-title" class="h2">Répondre n'est que <span class="accent">le début.</span></h2>
         <p class="lead lead--600">Un appel décroché qui ne produit rien reste un appel perdu. Pendant et après chaque conversation, l'agent travaille pour vous.</p>
         <div class="cards">
@@ -169,7 +156,7 @@
 
       <!-- S7 Le chemin -->
       <section class="path" aria-labelledby="path-title">
-        <p class="eyebrow">04 · Le chemin</p>
+        <p class="eyebrow">03 · Le chemin</p>
         <h2 id="path-title" class="h2">Quatre étapes, et vos appels <span class="accent">sont décrochés.</span></h2>
         <ol class="steps" role="list">
           <li class="step">
@@ -197,7 +184,7 @@
 
       <!-- S8 L'offre -->
       <section id="offre" class="offer" aria-labelledby="offer-title">
-        <p class="eyebrow">05 · L'offre</p>
+        <p class="eyebrow">04 · L'offre</p>
         <h2 id="offer-title" class="h2">Deux façons de <span class="accent">travailler ensemble.</span></h2>
         <div class="plans">
           <div class="plan">
@@ -252,7 +239,7 @@
             </picture>
           </div>
           <div class="about__body">
-            <p class="eyebrow eyebrow--left">06 · Qui je suis</p>
+            <p class="eyebrow eyebrow--left">05 · Qui je suis</p>
             <h2 id="about-title" class="about__name">Yassir Larabi</h2>
             <p class="about__role">Fondateur de VocalFlow · AI Manager chez Smart Funnel</p>
             <ul class="checklist checklist--about" role="list">
@@ -267,7 +254,7 @@
 
       <!-- S11 FAQ -->
       <section id="faq" class="faq" aria-labelledby="faq-title">
-        <p class="eyebrow">07 · FAQ</p>
+        <p class="eyebrow">06 · FAQ</p>
         <h2 id="faq-title" class="h2">Les questions qu'on me pose <span class="accent">vraiment.</span></h2>
         <div class="faq__list">
           <div class="faq__item">

@@ -39,3 +39,4 @@ Le `.dc.html` charge `./support.js` et `./image-slot.js` ; ils doivent être ser
 | Liens `#top` du pied de page (placeholders) | `/mentions-legales`, `/politique-confidentialite` |
 | Bouton « Devenir partenaire » (`#top`, placeholder) | `mailto:contact@vocal-flow.fr` (à remplacer par un formulaire ou une page si besoin) |
 | CTA final « Réserver mon diagnostic » (`#diagnostic`, placeholder) | Lien Calendly (`CALENDLY_URL` dans `main.js`) |
+| S4 « La preuve, en direct » (section) | Retirée le 07/09/2026 : son widget est intégré au hero, à la place du CTA « Réserver mon diagnostic » ; sections suivantes renumérotées |

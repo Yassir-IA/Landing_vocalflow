@@ -7,7 +7,7 @@ Site statique (HTML / CSS / JS vanilla, **zéro build**) implémentant la maquet
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | La landing (12 sections : hero, chiffres, problème, démo en direct, infrastructure, chemin, offre, marque blanche, qui je suis, FAQ, CTA final, pied de page) |
+| `index.html` | La landing (11 sections : hero avec démo en direct, chiffres, problème, infrastructure, chemin, offre, marque blanche, qui je suis, FAQ, CTA final, pied de page) |
 | `styles.css` | Styles : jetons de couleur dans `:root`, `@font-face` Inter, animations, responsive, `prefers-reduced-motion`, pages légales et 404 |
 | `main.js` | Veil d'ouverture, halo qui suit la souris, compteurs animés, widget de démo, accordéon FAQ, lien Calendly centralisé |
 | `mentions-legales.html` | Mentions légales (obligatoires en France) |
@@ -85,7 +85,7 @@ Pour rediriger l'URL `*.vercel.app` vers le domaine, ajouter dans `vercel.json` 
 ## À personnaliser
 
 - **Lien de réservation** : `CALENDLY_URL` dans `main.js` (`https://calendly.com/contact-vocal-flow/audit-ia-vocale`). Dans la maquette, les boutons « Réserver mon diagnostic » de la nav, du hero et de l'offre mènent à la section finale `#diagnostic` ; seul le bouton de cette section ouvre Calendly (nouvel onglet). Le `<a data-calendly>` a aussi l'URL en dur, pour fonctionner sans JS.
-- **Widget de démo** (section « La preuve, en direct ») : iframe `app.vocal-flow.fr/agent-test-public?token=…&agentId=…`, chargée uniquement au clic sur « Tester l'IA en direct ». Le cadre montre le sélecteur de micro et le bouton « Appeler l'agent » : variables dans `styles.css` (`--widget-offset: 409px`, `--widget-window: 130px`, `--widget-height: 630px`). La maquette prévoyait une fenêtre de 89 px (bouton seul), mais l'application affiche un sélecteur de micro au-dessus du bouton et le bouton remonte légèrement pendant l'appel, d'où une fenêtre plus haute. Si l'interface du widget change encore : `--widget-offset` déplace le contenu, `--widget-window` règle la hauteur visible. `WIDGET_AUTO_EXPAND` (`main.js`) agrandit le cadre au démarrage de l'appel (désactivé, comme la maquette).
+- **Widget de démo** (dans le hero, bouton « Tester l'IA en direct ») : iframe `app.vocal-flow.fr/agent-test-public?token=…&agentId=…`, chargée uniquement au clic sur « Tester l'IA en direct ». Le cadre montre le sélecteur de micro et le bouton « Appeler l'agent » : variables dans `styles.css` (`--widget-offset: 409px`, `--widget-window: 130px`, `--widget-height: 630px`). La maquette prévoyait une fenêtre de 89 px (bouton seul), mais l'application affiche un sélecteur de micro au-dessus du bouton et le bouton remonte légèrement pendant l'appel, d'où une fenêtre plus haute. Si l'interface du widget change encore : `--widget-offset` déplace le contenu, `--widget-window` règle la hauteur visible. `WIDGET_AUTO_EXPAND` (`main.js`) agrandit le cadre au démarrage de l'appel (désactivé, comme la maquette).
 - **Bouton « Devenir partenaire »** (marque blanche) : la maquette n'avait pas de cible ; il ouvre un e-mail vers `contact@vocal-flow.fr` avec l'objet pré-rempli (`data-partner` dans `index.html`).
 - **Compteurs** : `data-count` / `data-prefix` / `data-suffix` sur les `.stat__num` d'`index.html` (100 000 appels, 75 %).
 - **Photo** : `assets/portrait*.webp/jpg`. Pour la remplacer : mêmes noms de fichiers ou renommer et mettre à jour le `<picture>` (les assets sont mis en cache 30 jours).
@@ -100,6 +100,8 @@ Pour rediriger l'URL `*.vercel.app` vers le domaine, ajouter dans `vercel.json` 
 
 Vérifiés par une revue croisée (fidélité, JS, responsive, accessibilité, sécurité, performance) ; tout le reste est au pixel sur desktop.
 
+- **Démo dans le hero** (demande du 07/09/2026) : la section « 02 · La preuve, en direct » de la maquette a été retirée et son
+  widget placé dans le hero, à la place du CTA « Réserver mon diagnostic » et de sa légende. Les sections suivantes sont renumérotées.
 - **Responsive** : la maquette est desktop uniquement ; en dessous de 1200 px les grilles se replient, les titres sont équilibrés
   (`text-wrap: balance`), la nav devient compacte, et sous 480 px le widget de démo est affiché en entier (son recadrage n'est fiable
   qu'à partir de 360 px de large).
