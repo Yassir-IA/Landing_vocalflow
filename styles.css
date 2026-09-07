@@ -341,24 +341,15 @@ ul, ol { padding: 0; list-style: none; }
 /* ---------- S8 L'offre ---------- */
 .offer { position: relative; padding: 100px 24px 40px; background-image: radial-gradient(640px 420px at 90% 40%, rgba(139, 92, 246, .08), transparent 65%); }
 .plans { max-width: 1020px; margin: 52px auto 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; align-items: stretch; }
-.plan { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 34px 36px; }
+.plan { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 40px 40px 42px; }
 .plan--featured { background: rgba(139, 92, 246, .05); border-color: rgba(167, 139, 250, .55); box-shadow: 0 0 70px -22px rgba(124, 92, 246, .5); }
 .plan__kicker { font-size: 11.5px; letter-spacing: .22em; font-weight: 700; color: var(--muted-3); text-transform: uppercase; }
 .plan--featured .plan__kicker { color: var(--accent); }
 .plan__name { margin-top: 12px; font-size: 26px; font-weight: 800; color: var(--ink); }
-.plan__desc { margin-top: 12px; font-size: 15.5px; line-height: 1.65; color: var(--muted); }
-.plan .checklist { margin-top: 24px; }
-.lead--offer { max-width: 720px; }
-.plan__note { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line-soft); font-size: 13.5px; line-height: 1.6; color: var(--muted-2); }
-.plan--featured .plan__note { color: var(--soft); border-top-color: rgba(167, 139, 250, .25); }
-.offer__pricing {
-  max-width: 1020px; margin: 22px auto 0; padding: 26px 34px 28px;
-  background: var(--card); border: 1px solid rgba(167, 139, 250, .28); border-radius: 20px;
-}
-.offer__pricing-title { font-size: 12.5px; letter-spacing: .28em; font-weight: 700; color: var(--accent); text-transform: uppercase; }
-.offer__pricing-grid { margin: 16px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 32px; }
-.offer__pricing-grid dt { font-size: 15.5px; font-weight: 700; color: var(--ink); }
-.offer__pricing-grid dd { margin: 6px 0 0; font-size: 14.5px; line-height: 1.65; color: var(--muted); }
+.plan__desc { margin-top: 14px; font-size: 16px; line-height: 1.7; color: var(--muted); }
+.plan .checklist { margin-top: 30px; gap: 16px; }
+.plan__note { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(167, 139, 250, .25); font-size: 14px; line-height: 1.6; color: var(--soft); }
+.offer__note { max-width: 640px; margin: 34px auto 0; text-align: center; font-size: 15px; line-height: 1.7; color: var(--muted-2); }
 
 /* ---------- S9 Marque blanche ---------- */
 .partner { padding: 90px 24px 40px; }
@@ -462,7 +453,6 @@ ul, ol { padding: 0; list-style: none; }
   .nav { padding: 0 20px; height: 64px; }
   .footer__inner { padding: 22px 20px; }
   .plans { grid-template-columns: 1fr; }
-  .offer__pricing-grid { grid-template-columns: 1fr; }
   .simple { padding-top: 112px; }
 }
 
@@ -480,8 +470,7 @@ ul, ol { padding: 0; list-style: none; }
   .final { padding: 88px 24px 72px; }
   .quotes { margin-top: 40px; }
   .law { margin-top: 36px; padding: 26px 22px; }
-  .plan { padding: 28px 24px; }
-  .offer__pricing { padding: 22px 22px 24px; }
+  .plan { padding: 30px 24px 32px; }
   .partner__card { padding: 28px 24px; gap: 24px; }
   .faq__q { padding: 18px 20px; }
   .faq__q > span:first-child { font-size: 16px; }
